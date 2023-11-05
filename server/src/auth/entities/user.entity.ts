@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
+
 @Schema()
 export class User {
 
@@ -28,5 +29,7 @@ export class User {
     @Prop({default: true})
     isActive: boolean;
 }
+
+
 
 export const UserSchema = SchemaFactory.createForClass(User);
