@@ -5,14 +5,14 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 @Schema()
 export class User {
 
-    @Prop({autoIncrement: true})
-    id: number;
+    // @Prop({autoIncrement: true})
+    // id: string;
 
     @Prop({unique: true, required: true})
     username: string;
 
     @Prop({required: true, minlength: 8})
-    password: string;
+    password?: string;
 
     @Prop({required: true})
     name: string;
@@ -28,6 +28,9 @@ export class User {
 
     @Prop({default: true})
     isActive: boolean;
+
+    @Prop({required: true})
+    genre: string;
 }
 
 
