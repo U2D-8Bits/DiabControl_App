@@ -20,4 +20,7 @@ export class CreateUserDto {
     @IsString()
     lastname: string;
 
+    @IsString()
+    genre: string;
+
 }
