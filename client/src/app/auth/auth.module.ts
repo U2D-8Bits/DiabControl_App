@@ -7,6 +7,10 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RecoverPasswordPageComponent } from './pages/recover-password-page/recover-password-page.component';
 import { UnblockUserPageComponent } from './pages/unblock-user-page/unblock-user-page.component';
 
+import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AuthLayoutPageComponent,
@@ -16,7 +20,9 @@ import { UnblockUserPageComponent } from './pages/unblock-user-page/unblock-user
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    PrimeNgModule,
+    MatButtonModule
   ],
   exports: [
     AuthLayoutPageComponent,
