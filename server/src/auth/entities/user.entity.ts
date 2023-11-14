@@ -31,6 +31,9 @@ export class User {
 
     @Prop({required: true})
     genre: string;
+
+    @Prop({required: true, minlength: 10, maxlength: 10})
+    phone: number;
 }
 
 
