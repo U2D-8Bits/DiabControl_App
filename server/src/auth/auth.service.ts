@@ -48,14 +48,8 @@ export class AuthService {
 
       throw new InternalServerErrorException('Something terrible happen!')
     }
-
-
-
-    // 1 - Encriptar la contrasena
-
-    // 2 - Guardar el usuario
-
   }
+
 
 async register(registerUserDto: RegisterUserDto): Promise<LoginResponse>{
 
@@ -91,13 +85,25 @@ async register(registerUserDto: RegisterUserDto): Promise<LoginResponse>{
 }
 
 
-  findAll() {
-    return `This action returns all auth`;
+// Metodo para obtener un usuario por ID y permitir accesos por Rol[Admin]
+  async greatAccesUser( _userID: string ){
+    const user = await this.userModel.findById(_userID);
+    const resultUser = user.toJSON();
+    return resultUser;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} auth`;
+  // Metodo para obtener un usuario por ID
+  async findUserByID( idUser: string){
+    const user = await this.userModel.findById(idUser);
+    const _user = user.toJSON();
+    return _user;
   }
+
+  //Metodo para obtener todos los usuarios
+  findAll(): Promise<User[]> {
+    return this.userModel.find();
+  }
+
 
   update(id: number, updateUserDto: UpdateUserDto) {
     return `This action updates a #${id} auth`;
