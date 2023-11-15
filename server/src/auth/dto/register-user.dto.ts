@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 
-import { IsString, IsEmail, MinLength } from "class-validator";
+import { IsString, IsEmail, MinLength, Matches } from "class-validator";
 
 /* eslint-disable prettier/prettier */
 export class RegisterUserDto {
@@ -25,5 +25,12 @@ export class RegisterUserDto {
 
     @IsString()
     role: string;
+
+    @Matches(/^0[89]\d{8}$/)
+    phone: string;
+
+    @Matches(/^(1[8-9]|[2-9][0-9])$/)
+    age: string;
+
 
 }

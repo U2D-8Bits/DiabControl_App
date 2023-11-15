@@ -4,6 +4,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request }
 import { AuthService } from './auth.service';
 import { RegisterUserDto, LoginDto, UpdateUserDto, CreateUserDto } from './dto';
 import { AuthGuard } from './guards/auth.guard';
+import { get } from 'http';
+import { LoginResponse } from './interfaces/login-response';
+import { User } from './entities/user.entity';
+import { LoginGuard } from './guards/login.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -16,8 +20,9 @@ export class AuthController {
 
 
   // Ruta para Login
+  @UseGuards( LoginGuard )
   @Post('/login')
-  login( @Body() loginDto: LoginDto ){
+  login( @Request() req: Request,  @Body() loginDto: LoginDto ){
     return this.authService.login(loginDto);
   }
 
@@ -57,4 +62,17 @@ export class AuthController {
   remove(@Param('id') id: string) {
     return this.authService.remove(+id);
   }
+
+
+  //Checkear el tocken usando LoginResponse
+  @UseGuards( AuthGuard )
+  @Get('check-token')
+  checkToken( @Request() req:Request ): LoginResponse{
+    const user = req['user'] as User;
+    return {
+      user,
+      token: this.authService.getJWT({ id: user._id }),
+    }
+  }
+
 }
