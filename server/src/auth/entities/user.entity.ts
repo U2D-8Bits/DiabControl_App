@@ -32,8 +32,11 @@ export class User {
     @Prop({required: true})
     genre: string;
 
-    @Prop({required: true, minlength: 10, maxlength: 10})
-    phone: number;
+    @Prop({unique:true, required: true, minlength: 10, maxlength: 10, match: /^[0-9]+$/})
+    phone: string;
+
+    @Prop({required: true})
+    age: string;
 }
 
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
-import { BadRequestException, Injectable, InternalServerErrorException, UnauthorizedException } from '@nestjs/common';
-import {InjectModel} from "@nestjs/mongoose";
+import { BadRequestException, ConflictException, Injectable, InternalServerErrorException, UnauthorizedException } from '@nestjs/common';
+import { InjectModel } from "@nestjs/mongoose";
 import { User } from './entities/user.entity';
 import { Model } from 'mongoose';
 
@@ -17,33 +17,33 @@ import { RegisterUserDto, LoginDto, UpdateUserDto, CreateUserDto } from './dto';
 export class AuthService {
 
   constructor(
-    @InjectModel(User.name) 
+    @InjectModel(User.name)
     private userModel: Model<User>,
 
     private jwtService: JwtService
-  ) {}
+  ) { }
 
-// Metodo para crear un usuario.
+  // Metodo para crear un usuario.
   async create(createUserDto: CreateUserDto): Promise<User> {
     console.log(createUserDto);
 
-    try{
+    try {
 
-      const {password, ...userData} = createUserDto;
+      const { password, ...userData } = createUserDto;
       const newUser = new this.userModel({
         password: bcrypt.hashSync(password, 10),
         ...userData
       });
 
       await newUser.save();
-      const {password:_, ...user} = newUser.toJSON();
+      const { password: _, ...user } = newUser.toJSON();
 
       return user;
 
-    } catch(error){
+    } catch (error) {
       console.log('Error =>', error.code)
-      if(error.code === 11000){
-        throw new BadRequestException(`${ createUserDto.email} already exist!`)
+      if (error.code === 11000) {
+        throw new ConflictException(`Some Data already exist!`)
       }
 
       throw new InternalServerErrorException('Something terrible happen!')
@@ -51,53 +51,58 @@ export class AuthService {
   }
 
 
-async register(registerUserDto: RegisterUserDto): Promise<LoginResponse>{
 
-  const user = await this.create(registerUserDto);
+  async register(registerUserDto: RegisterUserDto): Promise<LoginResponse> {
 
-  return{
-    user,
-    token: this.getJWT({id: user._id}),
-  }
-}
+    const user = await this.create(registerUserDto);
 
-
-// Metodo para Login
-  async login( loginDto: LoginDto ): Promise<LoginResponse>{
-  const {username, password} = loginDto;
-
-  const user = await this.userModel.findOne({username});
-  if( !username ){
-    throw new UnauthorizedException('Invalid credentials');
+    return {
+      user,
+      token: this.getJWT({ id: user._id }),
+    }
   }
 
-  if( !bcrypt.compareSync(password, user.password) ){
-    throw new UnauthorizedException('Invalid credentials');
+
+
+  // Metodo para Login
+  async login(loginDto: LoginDto): Promise<LoginResponse> {
+    const { username, password } = loginDto;
+
+    const user = await this.userModel.findOne({ username });
+    if (!username) {
+      throw new UnauthorizedException('Invalid credentials');
+    }
+
+    if (!bcrypt.compareSync(password, user.password)) {
+      throw new UnauthorizedException('Invalid credentials');
+    }
+
+    const { password: _password, ...result } = user.toJSON();
+
+    return {
+      user: result,
+      token: this.getJWT({ id: user.id }),
+    }
   }
 
-  const { password:_password, ...result} = user.toJSON();
 
-
-  return{
-    user: result,
-    token: this.getJWT({id: user.id}),
-  }
-}
-
-
-// Metodo para obtener un usuario por ID y permitir accesos por Rol[Admin]
-  async greatAccesUser( _userID: string ){
+  // Metodo para obtener un usuario por ID y permitir accesos por Rol[Admin]
+  async greatAccesUser(_userID: string) {
     const user = await this.userModel.findById(_userID);
     const resultUser = user.toJSON();
     return resultUser;
   }
 
+
+
   // Metodo para obtener un usuario por ID
-  async findUserByID( idUser: string){
+  async findUserByID(idUser: string) {
     const user = await this.userModel.findById(idUser);
     const _user = user.toJSON();
     return _user;
   }
+
+
 
   //Metodo para obtener todos los usuarios
   findAll(): Promise<User[]> {
@@ -105,16 +110,20 @@ async register(registerUserDto: RegisterUserDto): Promise<LoginResponse>{
   }
 
 
+
   update(id: number, updateUserDto: UpdateUserDto) {
     return `This action updates a #${id} auth`;
   }
+
+
 
   remove(id: number) {
     return `This action removes a #${id} auth`;
   }
 
-// Metodo para generar el JWT
-  getJWT( payload: JwtPayload){
+
+  // Metodo para generar el JWT
+  getJWT(payload: JwtPayload) {
     const token = this.jwtService.sign(payload);
     return token;
   }
