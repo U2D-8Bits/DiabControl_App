@@ -2,33 +2,37 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { AuthLayoutPageComponent } from './pages/auth-layout-page/auth-layout-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { RecoverPasswordPageComponent } from './pages/recover-password-page/recover-password-page.component';
-import { UnblockUserPageComponent } from './pages/unblock-user-page/unblock-user-page.component';
 
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
 import {MatButtonModule} from '@angular/material/button';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { RecoverPageComponent } from './pages/recover-page/recover-page.component';
+import { UnblockPageComponent } from './pages/unblock-page/unblock-page.component';
+import { share } from 'rxjs';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    AuthLayoutPageComponent,
+    AuthLayoutComponent,
+    RecoverPageComponent,
+    UnblockPageComponent,
     LoginPageComponent,
-    RecoverPasswordPageComponent,
-    UnblockUserPageComponent,
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     PrimeNgModule,
-    MatButtonModule
+    MatButtonModule,
+
+    SharedModule
   ],
   exports: [
-    AuthLayoutPageComponent,
+    AuthLayoutComponent,
     LoginPageComponent,
-    RecoverPasswordPageComponent,
-    UnblockUserPageComponent,
+    RecoverPageComponent,
+    UnblockPageComponent,
   ]
 })
 export class AuthModule { }
