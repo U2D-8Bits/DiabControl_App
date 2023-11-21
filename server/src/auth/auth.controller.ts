@@ -7,7 +7,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { get } from 'http';
 import { LoginResponse } from './interfaces/login-response';
 import { User } from './entities/user.entity';
-import { LoginGuard } from './guards/login.guard';
+import { isActiveGuard } from './guards/is-active.guard';
+// import { LoginGuard } from './guards/login.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -20,9 +21,9 @@ export class AuthController {
 
 
   // Ruta para Login
-  @UseGuards( LoginGuard )
+  // @UseGuards( isActiveGuard )
   @Post('/login')
-  login( @Request() req: Request,  @Body() loginDto: LoginDto ){
+  login(  @Body() loginDto: LoginDto ){
     return this.authService.login(loginDto);
   }
 

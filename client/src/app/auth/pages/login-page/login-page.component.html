@@ -1,5 +1,5 @@
 
-<form class="grid h-full">
+<form [formGroup]="myForm" (ngSubmit)="login()" class="grid h-full">
 
   <div class="flex flex-column align-items-center justify-content-center h-auto">
     <div class="flex align-items-center justify-center">
@@ -11,6 +11,7 @@
     <div class="field mb-4">
       <label for="username">Nombre de Usuario</label>
       <input type="text" pInputText
+          formControlName="username"
         class="text-base text-color surface-overlay p-2 border-2 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
     </div>
 
@@ -21,6 +22,7 @@
       </div>
 
       <input type="password" pInputText
+      formControlName="password"
       class="text-base text-color surface-overlay p-2 border-2 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
 
     </div>
@@ -33,7 +35,7 @@
   </div>
 
   <div class="flex justify-content-center h-3rem">
-    <button pButton label="Ingresar" class="buttonLogin pt-2 pb-2 px-3"></button>
+    <button pButton label="Ingresar" onclick="login()" [disabled]="myForm.invalid" class="buttonLogin pt-2 pb-2 px-3"></button>
   </div>
 
 

@@ -19,7 +19,6 @@ export class AuthService {
   constructor(
     @InjectModel(User.name)
     private userModel: Model<User>,
-
     private jwtService: JwtService
   ) { }
 
@@ -64,13 +63,19 @@ export class AuthService {
 
 
 
-  // Metodo para Login
+ // Metodo para Login
   async login(loginDto: LoginDto): Promise<LoginResponse> {
     const { username, password } = loginDto;
 
     const user = await this.userModel.findOne({ username });
     if (!username) {
       throw new UnauthorizedException('Invalid credentials');
+    }
+    if(!password){
+      throw new BadRequestException('Password is required');
+    }
+    if(!user.isActive){
+      throw new UnauthorizedException('User is not active');
     }
 
     if (!bcrypt.compareSync(password, user.password)) {
@@ -85,6 +90,14 @@ export class AuthService {
     }
   }
 
+
+
+  //Metodo para obtener el isActive de un usuario
+  async isActiveUser(_userID: string) {
+    const user = await this.userModel.findById(_userID);
+    const resultUser = user.toJSON();
+    return resultUser.isActive;
+  }
 
   // Metodo para obtener un usuario por ID y permitir accesos por Rol[Admin]
   async greatAccesUser(_userID: string) {
