@@ -64,21 +64,6 @@ ul, li {
 
 
 /*---------------------------------------------*/
-/* input {
-  outline: none;
-  border: none;
-}
-
-textarea {
-outline: none;
-border: none;
-}
-
-textarea:focus, input:focus {
-border-color: transparent !important;
-} */
-
-/*---------------------------------------------*/
 button {
   outline: none !important;
   border: none;
@@ -96,6 +81,16 @@ button:hover {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
+}
+
+.buttonLogin{
+  background-color: #3B82F6;
+  color: white;
+  border-radius: 4px;
+}
+
+.buttonLogin:hover{
+  background-color: #2563EB;
 }
 
 
