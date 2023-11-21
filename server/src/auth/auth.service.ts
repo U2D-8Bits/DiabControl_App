@@ -72,10 +72,17 @@ export class AuthService {
       throw new UnauthorizedException('Invalid credentials');
     }
     if(!password){
-      throw new BadRequestException('Password is required');
+
+      const customMesage = 'Wrong password';
+      const customErrorCode = '598';
+
+      throw new UnauthorizedException(customMesage, customErrorCode);
     }
     if(!user.isActive){
-      throw new UnauthorizedException('User is not active');
+      const customMesage = 'User is not active';
+      const customErrorCode = '599';
+
+      throw new UnauthorizedException(customMesage, customErrorCode);
     }
 
     if (!bcrypt.compareSync(password, user.password)) {
