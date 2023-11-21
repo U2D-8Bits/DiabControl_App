@@ -1,0 +1,18 @@
+.buttonLogin{
+  background-color: #3B82F6;
+  color: white;
+  border-radius: 4px;
+}
+
+.buttonLogin:hover{
+  background-color: #2563EB;
+}
+
+.aLink{
+  color: #3B82F6;
+  cursor: pointer;
+}
+
+.aLink:hover{
+  color: #2563EB;
+}

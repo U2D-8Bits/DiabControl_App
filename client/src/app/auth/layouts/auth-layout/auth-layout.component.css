@@ -1,0 +1,29 @@
+.titleApp{
+  color: #FFFFFF;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.fullScreen{
+  width: 100%;
+  height: 100%;
+}
+
+.menuDiv{
+  height: 10%;
+}
+
+.loginDiv{
+  height: 90%;
+}
+
+
+.geometryBord{
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+#containerDiv{
+  background-image: linear-gradient(60deg, #28AADC, #3657AC);
+}
