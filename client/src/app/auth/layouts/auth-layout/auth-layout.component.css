@@ -26,4 +26,5 @@
 
 #containerDiv{
   background-image: linear-gradient(60deg, #28AADC, #3657AC);
+  height: 100vh;
 }
