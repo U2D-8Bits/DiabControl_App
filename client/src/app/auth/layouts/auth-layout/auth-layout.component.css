@@ -17,3 +17,13 @@
 .loginDiv{
   height: 90%;
 }
+
+
+.geometryBord{
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+#containerDiv{
+  background-image: linear-gradient(60deg, #28AADC, #3657AC);
+}
