@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +19,9 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    PrimeNgModule
+    PrimeNgModule,
+
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,8 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { RecoverPageComponent } from './pages/recover-page/recover-page.component';
 import { UnblockPageComponent } from './pages/unblock-page/unblock-page.component';
-import { share } from 'rxjs';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { SharedModule } from '../shared/shared.module';
     PrimeNgModule,
     MatButtonModule,
 
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   exports: [
     AuthLayoutComponent,

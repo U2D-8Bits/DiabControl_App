@@ -36,6 +36,7 @@ export class AuthGuard implements CanActivate {
 
         const user = await this.authService.greatAccesUser(payload.id);
         if( !user) throw new UnauthorizedException('User not found');
+        
         //condicion para que el usuario tenga el rol de admin
         if( !user.role.includes('admin')) throw new UnauthorizedException('User is not admin');
         if( !user.isActive ) throw new UnauthorizedException('User is not active');
