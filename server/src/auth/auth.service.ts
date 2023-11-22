@@ -64,19 +64,15 @@ export class AuthService {
 
 
  // Metodo para Login
-  async login(loginDto: LoginDto): Promise<LoginResponse> {
+  async login(loginDto: LoginDto): Promise<LoginResponse>{
     const { username, password } = loginDto;
 
     const user = await this.userModel.findOne({ username });
     if (!username) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('Wrong username');
     }
-    if(!password){
-
-      const customMesage = 'Wrong password';
-      const customErrorCode = '598';
-
-      throw new UnauthorizedException(customMesage, customErrorCode);
+        if (!bcrypt.compareSync(password, user.password)) {
+      throw new UnauthorizedException('Wrong password');
     }
     if(!user.isActive){
       const customMesage = 'User is not active';
@@ -85,9 +81,7 @@ export class AuthService {
       throw new UnauthorizedException(customMesage, customErrorCode);
     }
 
-    if (!bcrypt.compareSync(password, user.password)) {
-      throw new UnauthorizedException('Invalid credentials');
-    }
+
 
     const { password: _password, ...result } = user.toJSON();
 
