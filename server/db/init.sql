@@ -1,3 +1,3 @@
--- CREATE DATABASE IF NOT EXISTS `MedSyncDB`;
-SELECT 'CREATE DATABASE MedSyncDB'
-WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'MedSyncDB')\gexec
+-- CREATE DATABASE IF NOT EXISTS `medsyncdb`;
+SELECT 'CREATE DATABASE medsyncdb'
+WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'medsyncdb')\gexec

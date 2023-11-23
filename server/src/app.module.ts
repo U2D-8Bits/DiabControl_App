@@ -8,6 +8,8 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 
 import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { DataSourceConfig } from './config/data.source';
 
 @Module({
   imports: [
@@ -15,6 +17,7 @@ import { ConfigModule } from '@nestjs/config';
       envFilePath: `.${process.env.NODE_ENV.trim()}.env`,
       isGlobal: true,
     }),
+    TypeOrmModule.forRoot({...DataSourceConfig}),
     UsersModule,
   ],
   controllers: [AppController],
