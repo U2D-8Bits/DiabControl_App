@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    image: postgres:16.1
+    container_name: MedSyncDB
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: MedSyncDB
+      POSTGRES_USER: U2D8Bits
+      POSTGRES_PASSWORD: 8Bits
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    
+
+  pgadmin:
+    image:  dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: u2d.8bits@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: 8Bits
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres
