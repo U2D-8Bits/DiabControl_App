@@ -5,7 +5,14 @@ import { Error404PageComponent } from './shared/pages/error404-page/error404-pag
 const routes: Routes = [
   {
     path: 'auth',
+    //Guards
+
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) // Lazy load module
+    //medsync.com/auth/login
+  },
+  {
+    path: 'home',
+
   },
   {
     path: '404',
