@@ -1,5 +1,7 @@
 import express from "express";
 import cors from "cors";
+import indexRoutes from './routes/idex.routes.js';
+
 
 const app = express();
 
@@ -10,3 +12,4 @@ app.use(cors({
 }));
 
 export default app;
+app.use(indexRoutes);

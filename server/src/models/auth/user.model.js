@@ -37,7 +37,7 @@ export const User = sequelize.define('tb_user', {
         allowNull: false,
         references: {
             model: Role,
-            key: Role.int_id_role,
+            key: 'int_id_role',
         }
     }
 
@@ -49,3 +49,6 @@ export const User = sequelize.define('tb_user', {
     freezeTableName: true,
 }   
 ); 
+
+//Definir la asociacion entre la tabla Role y la tabla User
+User.belongsTo(Role, {foreignKey: 'int_id_role'});

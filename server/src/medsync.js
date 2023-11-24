@@ -2,6 +2,7 @@ import app from './app.js';
 import { configVariables } from './config/variables.config.js';
 import { sequelize } from './database/postgres.js';
 
+
 async function main( port ){
     try {
         
@@ -11,7 +12,7 @@ async function main( port ){
             //Se declara false para que no se creen las tablas cada que se ejecuta el servidor
             force: false,
             //Se declara false para que no aparezca en consola de datos
-            logging: false,
+            logging: true,
         });
 
         //Se levanta el servidor y anuncia el puerto en el que corre
