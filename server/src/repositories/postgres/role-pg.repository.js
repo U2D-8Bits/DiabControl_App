@@ -16,12 +16,33 @@ const CreateRole = async ( roleName )=> {
     }
 }
 
+const GetRoleByName = async ( roleName ) => {
+    try {
+        
+        const role = await Role.findOne({
+            where:{
+                str_name_role:roleName
+            }
+        });
+
+        return role;
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
 
 // Get a role by id
 const GetRoleByID = async ( idRol ) => {
     try {
         
-        const role = await Role.findByPk(idRol);
+        const role = await Role.findOne({
+            where:{
+                int_id_role:idRol
+            }
+        });
 
         return role;
 
@@ -44,16 +65,19 @@ const GetAllRoles = async () => {
 }
 
 // Update the role by ID
-const UpdateRoleByID = async ( idRol ) => {
+const UpdateRoleByID = async ( idRol, roleName ) => {
     try {
         
-        const role = await Role.update({
+        const updateRole = await Role.update({
+            str_name_role: roleName
+            },
+            {
             where:{
                 int_id_role:idRol
-            }
-        });
+        }});
 
-        return role;
+        console.log("Repository =>",updateRole);
+        return updateRole;
 
     } catch (error) {
         console.log(error);
@@ -63,13 +87,13 @@ const UpdateRoleByID = async ( idRol ) => {
 // Delete the role by ID
 const DeleteRoleById = async ( idRol ) => {
     try {
-        const role = await Role.destroy({
+        const destroyRole = await Role.destroy({
             where:{
                 int_id_role:idRol
             }
-        })
+        });
 
-        return role;
+        return destroyRole;
 
     } catch (error) {
         console.log(error);
@@ -83,5 +107,6 @@ export default {
     GetRoleByID,
     GetAllRoles,
     UpdateRoleByID,
-    DeleteRoleById
+    DeleteRoleById,
+    GetRoleByName
 };
