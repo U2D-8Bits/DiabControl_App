@@ -1,5 +1,6 @@
 import { Role } from '../../models/auth/role.model.js';
 
+// Create a new role
 const CreateRole = async ( roleName )=> {
     try {
 
@@ -15,28 +16,54 @@ const CreateRole = async ( roleName )=> {
     }
 }
 
-const GetRoleByName = async ( roleName ) => {
 
+// Get a role by id
+const GetRoleByID = async ( idRol ) => {
     try {
-
-        const role = await Role.findOne({
-            where:{
-                str_name_role: roleName
-            }
-        })
+        
+        const role = await Role.findByPk(idRol);
 
         return role;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// Get all the roles
+const GetAllRoles = async () => {
+    try {
         
+        const roles = await Role.findAll();
+
+        return roles;
+
     } catch (error) {
         console.log(error)
     }
 }
 
-
-const GetRole = async ( idRol ) =>{
+// Update the role by ID
+const UpdateRoleByID = async ( idRol ) => {
     try {
         
-        const role = await Role.findOne({
+        const role = await Role.update({
+            where:{
+                int_id_role:idRol
+            }
+        });
+
+        return role;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// Delete the role by ID
+const DeleteRoleById = async ( idRol ) => {
+    try {
+        const role = await Role.destroy({
             where:{
                 int_id_role:idRol
             }
@@ -45,7 +72,7 @@ const GetRole = async ( idRol ) =>{
         return role;
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
@@ -53,6 +80,8 @@ const GetRole = async ( idRol ) =>{
 
 export default {
     CreateRole,
-    GetRole,
-    GetRoleByName
+    GetRoleByID,
+    GetAllRoles,
+    UpdateRoleByID,
+    DeleteRoleById
 };

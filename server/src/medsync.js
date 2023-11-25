@@ -2,6 +2,8 @@ import app from './app.js';
 import { configVariables } from './config/variables.config.js';
 import { sequelize } from './database/postgres.js';
 
+//Import de las tablas que se desea crear
+
 
 async function main( port ){
     try {
