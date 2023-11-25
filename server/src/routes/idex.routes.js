@@ -1,5 +1,5 @@
 import { Router } from "express";
-import roleRoutes from './auth/role-routes.js';
+import roleRoutes from './auth/role.routes.js';
 
 const router = Router();
 

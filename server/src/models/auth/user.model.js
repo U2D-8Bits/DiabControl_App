@@ -32,6 +32,10 @@ export const User = sequelize.define('tb_user', {
         type: DataTypes.STRING(50),
         allowNull: false
     },
+    bool_status_user: {
+        type: DataTypes.BOOLEAN, defaultValue: true,
+        allowNull: false
+    },
     int_id_role: {
         type: DataTypes.INTEGER,
         allowNull: false,
