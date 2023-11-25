@@ -6,7 +6,7 @@ const CreateRoleController = async (req, res) => {
     try {
         const { roleName } = req.body;
         console.log("Llega a Rolname =>",roleName);
-        const role = await RoleService.CreateRole(roleName);
+        const role = await RoleService.CreateRoleService(roleName);
 
         if(role === 1){
             return res.status(400).json({
@@ -19,7 +19,7 @@ const CreateRoleController = async (req, res) => {
         if(role === 2){
             return res.status(400).json({
                 status: false,
-                message: "Surgio un error al crear el rol",
+                message: "Surgió un error al crear el rol",
                 body:[],
             });
         }
@@ -27,17 +27,19 @@ const CreateRoleController = async (req, res) => {
         if( role === 3){
             return res.status(400).json({
                 status: false,
-                message: "Se requiere un nombre de rol valido",
+                message: "Se requiere un nombre de rol válido",
                 body:[],
             });
         }
 
+        if(role){
+            res.status(200).json({
+                status: true,
+                message: "El rol se creo correctamente",
+                body:role,
+            })
+        }
 
-        res.status(200).json({
-            status: true,
-            message: "El rol se creo correctamente",
-            body:role,
-        })
         
 
     } catch (error) {
@@ -55,7 +57,7 @@ const GetAllRolesController = async (req, res) =>{
 
     try {
 
-        const roles = await RoleService.GetAllRoles();
+        const roles = await RoleService.GetAllRolesService();
 
         res.status(200).json({
             status: true,
@@ -79,12 +81,12 @@ const GetRoleByIDController = async (req, res) => {
     try {
         const { idRol } = req.params;
         console.log("Llega a idRol =>",idRol);
-        const role = await RoleService.GetRoleByID(idRol)
+        const role = await RoleService.GetRoleByIDService(idRol)
     
         if(role === 1){
             return res.status(400).json({
                 status: false,
-                message: "El id de rol ingresado no es valido",
+                message: "El id de rol ingresado no es válido",
                 body:[],
             });
         }
@@ -111,8 +113,105 @@ const GetRoleByIDController = async (req, res) => {
     }
 }
 
+//Metodo para actualizar un rol por el ID
+const UpdateRoleByIDController = async (req, res) => {
+    try {
+        const { idRol } = req.params;
+        const { roleName} = req.body;
+
+
+
+        const role = await RoleService.UpdateRoleByIDService(idRol,roleName);
+
+        if(role === 1){
+            return res.status(400).json({
+                status: false,
+                message: "El id de rol ingresado no es válido",
+                body:[],
+            });
+        }
+
+        if(role === 2){
+            return res.status(400).json({
+                status: false,
+                message: "El idRol no existe",
+                body:[],
+            });
+        }
+
+        if(role === 3){
+            return res.status(400).json({
+                status: false,
+                message: "El rol no se actualizo",
+                body:[],
+            });
+        }
+
+        res.status(200).json({
+            status: true,
+            message: "El rol se actualizo correctamente",
+            body:[],
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Error en el servidor" + error,
+            body:[],
+        });
+    }
+} 
+
+const DeleteRoleByIDController = async (req, res) => {
+    try {
+
+        const { idRol } = req.params;
+
+        const role = await RoleService.DeleteRoleByIDService(idRol);
+
+        if(role === 1){
+            return res.status(400).json({
+                status: false,
+                message: "El id de rol ingresado no es válido",
+                body:[],
+            });
+        }
+
+        if(role === 2){
+            return res.status(400).json({
+                status: false,
+                message: "El idRol no existe",
+                body:[],
+            });
+        }
+
+        if(role === 3){
+            return res.status(400).json({
+                status: false,
+                message: "El rol no se elimino",
+                body:[],
+            });
+        }
+
+        res.status(200).json({
+            status: true,
+            message: "El rol se elimino correctamente",
+            body:[],
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Error en el servidor" + error,
+            body:[],
+        });
+    }
+}
+
 export default {
     CreateRoleController,
     GetAllRolesController,
     GetRoleByIDController,
+    UpdateRoleByIDController,
+    DeleteRoleByIDController
 }
