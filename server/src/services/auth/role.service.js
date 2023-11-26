@@ -47,8 +47,6 @@ const GetAllRolesService = async () =>{
     }
 }
 
-
-
 // Metodo para obtener un rol por ID
 const GetRoleByIDService = async ( idRol ) => {
     try {
@@ -109,6 +107,7 @@ const UpdateRoleByIDService = async ( idRol, roleName ) => {
     }
 }
 
+//Metodo para eliminar un rol por ID
 const DeleteRoleByIDService = async ( idRol ) => {
     try {
 
