@@ -97,15 +97,36 @@ const GetUserByUsernameService = async ( username ) => {
             return 1;
         }
 
-        const user = await UserRepositories.GetUserByUsername(username);
+        const existUserName = await UserRepositories.GetUserByUsername(username);
 
-        if(!user){
+        if(existUserName){
             //Retornamos el valor 2 para notificar que el username existe
             return 2;
         }
 
+        return existUserName;
 
+    } catch (error) {
+        console.log(error);
+    }
+}
 
+//Metodo para obtener usuario por email
+const GetUserByEmailService = async ( email ) => {
+    try {
+        
+        if(!email){
+            //Retornamos el valor 1 para notificar que no se ha agregado un email no valido
+            return 1;
+        }
+
+        const existEmail = await UserRepositories.GetUserByEmail(email);
+        if(existEmail){
+            //Retornamos el valor 2 para notificar que el email no existe
+            return 2;
+        }
+
+        return existEmail;
 
     } catch (error) {
         console.log(error);
@@ -116,5 +137,6 @@ export default {
     PostUserService,
     GetAllUserService,
     GetUserByIDService,
-    GetUserByUsernameService
+    GetUserByUsernameService,
+    GetUserByEmailService
 }

@@ -7,6 +7,8 @@ router.get('/', UserController.GetAllUsersController);
 //Ruta para obtener el usuario por ID
 router.get('/:id', UserController.GetUserByIDController);
 //Ruta para obtener el usuario por username
-router.get('/:username', );
+router.get('/:username', UserController.GetUserByUsernameController);
+//Ruta para obtener el usuario por email
+router.get('/:email');
 
 export default router;

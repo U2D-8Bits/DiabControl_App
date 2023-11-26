@@ -72,7 +72,81 @@ const GetUserByIDController = async (req, res) => {
     }
 }
 
+//Metodo para obtener el usuario por username
+const GetUserByUsernameController = async ( req, res) => {
+    try {
+
+        const { username } = req.params;
+        const user = await userService.GetUserByUsernameService(username);
+
+        if(user === 1){
+            return res.status(400).json({
+                status: false,
+                message: "El username ingresado no es válido",
+                body:[],
+            })
+        }
+
+        if(user === 2){
+            return res.status(400).json({
+                status: false,
+                message: "El usuario ya existe",
+                body:[],
+            })
+        }
+
+        res.status(200).json({
+            status: true,
+            message: "El usuario se obtuvo correctamente",
+            body:user,
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Error en el servidor" + error,
+            body:[],
+        })
+    }
+}
+
+//Metodo para obtener el usuario por email
+const GetUserByEmailController = async ( req, res) => {
+    try {
+
+        const { email } = req.params;
+        const userEmail = await userService.GetUserByEmailService(email);
+
+        if(userEmail === 1){
+            return res.status(400).json({
+                status: false,
+                message: "El email ingresado no es válido",
+                body:[],
+            })
+        }
+
+        if(userEmail === 2){
+            return res.status(400).json({
+                status: false,
+                message: "El usuario ya existe",
+                body:[],
+            })
+        }
+
+
+        
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Error en el servidor" + error,
+            body:[],
+        })
+    }
+}
+
 export default {
     GetAllUsersController,
-    GetUserByIDController
+    GetUserByIDController,
+    GetUserByUsernameController,
+    GetUserByEmailController
 }
