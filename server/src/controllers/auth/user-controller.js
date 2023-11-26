@@ -1,6 +1,70 @@
 import userService from "../../services/auth/user.service.js";
 
 // Metodo para crear un usuario
+const PostUserController = async (req, res) => {
+    try {
+
+        const { name, lastname, username, password, email, phone, idRol } = req.body;
+
+        console.log("Contenido que llega a Controller=>", name, lastname, username, password, email, phone, idRol);
+
+        const user = await userService.PostUserService(name, lastname, username, password, email, phone, idRol);
+        console.log("Valor de user en Controller =>", {user})
+
+        if(user === 1){
+            return res.status(400).json({
+                status: false,
+                message: "Existen datos faltantes",
+                body:[],
+            });
+        }
+
+        if(user === 2){
+            return res.status(400).json({
+                status: false,
+                message: "El nombre de usuario ingresado ya existe",
+                body:[],
+            });
+        }
+
+        if(user === 3){
+            return res.status(400).json({
+                status: false,
+                message: "El email ingresado ya existe",
+                body:[],
+            });
+        }
+
+        if(user === 4){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono ingresado ya existe",
+                body:[],
+            });
+        }
+
+        if(user === 5){
+            return res.status(400).json({
+                status: false,
+                message: "El usuario no se pudo crear",
+                body:[],
+            });
+        }
+
+        res.status(200).json({
+            status: true,
+            message: "El usuario se creo correctamente",
+            body:[],
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Error en el servidor" + error,
+            body:[],
+        })
+    }
+}
 
 //Metodo para obtener todos los usuarios
 const GetAllUsersController = async (req, res) => {
@@ -82,7 +146,7 @@ const GetUserByUsernameController = async ( req, res) => {
         if(user === 1){
             return res.status(400).json({
                 status: false,
-                message: "El username ingresado no es válido",
+                message: "El nombre de usuario ingresado no es válido",
                 body:[],
             })
         }
@@ -90,7 +154,7 @@ const GetUserByUsernameController = async ( req, res) => {
         if(user === 2){
             return res.status(400).json({
                 status: false,
-                message: "El usuario ya existe",
+                message: "El nombre de usuario ya existe",
                 body:[],
             })
         }
@@ -128,7 +192,47 @@ const GetUserByEmailController = async ( req, res) => {
         if(userEmail === 2){
             return res.status(400).json({
                 status: false,
-                message: "El usuario ya existe",
+                message: "El email ingresado ya existe",
+                body:[],
+            })
+        }
+
+        res.status(200).json({
+            status: true,
+            message: "El usuario se obtuvo correctamente",
+            body:userEmail,
+        })
+
+
+        
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Error en el servidor" + error,
+            body:[],
+        })
+    }
+}
+
+//Metodo para obtener el usuario por phone
+const GetUserByPhoneNumberController = async ( req, res) => {
+    try {
+
+        const { phone } = req.params;
+        const userPhone = await userService.GetUserByPhoneService(phone);
+
+        if(userPhone === 1){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono ingresado no es válido",
+                body:[],
+            })
+        }
+
+        if(userPhone === 2){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono registrado ya existe",
                 body:[],
             })
         }
@@ -148,5 +252,7 @@ export default {
     GetAllUsersController,
     GetUserByIDController,
     GetUserByUsernameController,
-    GetUserByEmailController
+    GetUserByEmailController,
+    GetUserByPhoneNumberController,
+    PostUserController,
 }

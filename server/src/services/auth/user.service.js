@@ -122,7 +122,7 @@ const GetUserByEmailService = async ( email ) => {
 
         const existEmail = await UserRepositories.GetUserByEmail(email);
         if(existEmail){
-            //Retornamos el valor 2 para notificar que el email no existe
+            //Retornamos el valor 2 para notificar que el email existe
             return 2;
         }
 
@@ -133,10 +133,30 @@ const GetUserByEmailService = async ( email ) => {
     }
 }
 
+//Metodo para obtener usuario por phone
+const GetUserByPhoneService = async (phone) => {
+    try {
+        
+        if(!phone){
+            return 1;
+        }
+
+        const existPhone = await UserRepositories.GetUserByPhone(phone);
+        if(existPhone){
+            return 2;
+        }
+
+        return existPhone;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
 export default {
     PostUserService,
     GetAllUserService,
     GetUserByIDService,
     GetUserByUsernameService,
-    GetUserByEmailService
+    GetUserByEmailService,
+    GetUserByPhoneService
 }
