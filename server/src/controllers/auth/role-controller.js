@@ -59,6 +59,14 @@ const GetAllRolesController = async (req, res) =>{
 
         const roles = await RoleService.GetAllRolesService();
 
+        if(!roles){
+            return res.status(400).json({
+                status: false,
+                message: "No se obtuvieron roles",
+                body:[],
+            });
+        }
+
         res.status(200).json({
             status: true,
             message: "Se obtuvieron todos los roles",
@@ -80,7 +88,6 @@ const GetRoleByIDController = async (req, res) => {
 
     try {
         const { idRol } = req.params;
-        console.log("Llega a idRol =>",idRol);
         const role = await RoleService.GetRoleByIDService(idRol)
     
         if(role === 1){
@@ -162,6 +169,7 @@ const UpdateRoleByIDController = async (req, res) => {
     }
 } 
 
+//Metodo para eliminar un usuario por el ID
 const DeleteRoleByIDController = async (req, res) => {
     try {
 
