@@ -1,3 +1,4 @@
+import { User } from '../../models/auth/user.model.js';
 import UserRepositories from '../../repositories/postgres/user-pg.repository.js';
 
 // Metodo para crear un usuario
@@ -34,7 +35,7 @@ const PostUserService = async ( name, lastname, username, password, email, phone
 
         //Crear el usuario si el username llega
         const user = await UserRepositories.PostUser(name, lastname, username, password, email, phone, idRol);
-
+        console.log("Valor de user en Repository =>", user);
         //Notificacion de que el usuario se no creo
         if(!user){
             //Retorno un valor 5 que significa de que el usuario no se creo x algun error
@@ -47,6 +48,11 @@ const PostUserService = async ( name, lastname, username, password, email, phone
     } catch (error) {
         console.log(error);
     }
+
+}
+
+//Metodo para validar el numero de telefono del usuario
+const ValidatePhoneNumber = async (phone) => {
 
 }
 
@@ -88,26 +94,29 @@ const GetUserByIDService = async ( id ) => {
 }
 
 //Metodo para obtener un usuario por username
-const GetUserByUsernameService = async ( username ) => {
+const GetUserService = async ( userData ) => {
     try {
 
         //Validamos que se haya ingresado un username existente
-        if(!username){
-            //Retornamos el valor 1 para notificar que no se ha agregado un username no valido
+        if(!userData){
+            //Retornamos el valor 1 para notificar que no se ha agregado un valor valido
             return 1;
         }
 
-        const existUserName = await UserRepositories.GetUserByUsername(username);
+        const existUserData = await UserRepositories.GetUser(userData);
+        console.log('existUserData:', existUserData);
 
-        if(existUserName){
-            //Retornamos el valor 2 para notificar que el username existe
+        if(!existUserData){
+            //Retornamos el valor 2 para notificar que el username no existe
             return 2;
         }
 
-        return existUserName;
+        //Retornamos el valor ${existUserName} para notificar que el username existe
+       return existUserData;
+        
 
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
     }
 }
 
@@ -136,14 +145,30 @@ const GetUserByEmailService = async ( email ) => {
 //Metodo para obtener usuario por phone
 const GetUserByPhoneService = async (phone) => {
     try {
-        
-        if(!phone){
+
+        //Validamos que el numero de telefono tenga 10 digitos
+        if(phone.length != 10){
             return 1;
+        }
+        
+        //Validamos que el numero de telefono sea un numero
+        if(isNaN(phone)){
+            return 2;
+        }
+
+        //Validamos que el numero de telefono no sea negativo
+        if(phone < 0){
+            return 3;
+        }
+
+        //Validamos que los dos primeros digitos sean 0 y 9
+        if(phone.substring(0,2) != "09"){
+            return 4;
         }
 
         const existPhone = await UserRepositories.GetUserByPhone(phone);
         if(existPhone){
-            return 2;
+            return 5;
         }
 
         return existPhone;
@@ -152,11 +177,69 @@ const GetUserByPhoneService = async (phone) => {
         console.log(error);
     }
 }
+
+
+const PostLoginService = async (userData) => {
+    try {
+
+        if(!userData){
+            //Retornamos el valor de 1 
+            return {
+                status: false,
+                message: 'Campos no cumplen los valores requeridos',
+                body: [],
+            };
+        }
+
+        const {username, password} = userData;
+
+        //Validamos que el nombre de usuarioo sea valido
+        const userName = await UserRepositories.userByUsername(username)
+
+        if(!userName){
+            return {
+                status: false,
+                message: 'El nombre de usuario no es valido',
+                body: [],
+            };
+
+        }
+
+        const userPassword = await UserRepositories.userByPassword(password);
+
+        if(!userPassword){
+            return {
+                status: false,
+                message: 'La contraseña no es valida',
+                body: [],
+            };
+
+        }
+
+        return {
+            status: true,
+            message: 'Usuario logeado correctamente',
+            body: [],
+        };
+
+
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+
 export default {
     PostUserService,
     GetAllUserService,
     GetUserByIDService,
-    GetUserByUsernameService,
+    GetUserService,
     GetUserByEmailService,
-    GetUserByPhoneService
+    GetUserByPhoneService,
+
+
+    PostLoginService,
+
+    //Validaciones
+    ValidatePhoneNumber,
 }

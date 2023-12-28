@@ -9,7 +9,7 @@ import { Observable, catchError, map, tap, throwError } from 'rxjs';
 })
 export class AuthService {
 
-  private readonly baseUrl : string = environment.baseUrl;
+  private readonly baseUrl : string = environment.urlApi;
   private http = inject( HttpClient);
 
   private _currentUser = signal<User|null>(null);

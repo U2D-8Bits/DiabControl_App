@@ -1,0 +1,29 @@
+.generalContainer{
+  height: 100%;
+}
+
+.header{
+  height: 10%;
+  display: flex;
+  align-items: center;
+  background-color: greenyellow;
+  justify-content: space-between;
+}
+
+.containerActions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: red;
+  width: 250px;
+}
+
+.body{
+  height: 86%;
+}
+
+.footer{
+  height: 4%;
+  justify-content: center;
+  color: white;
+}

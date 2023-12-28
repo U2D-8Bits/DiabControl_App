@@ -1,4 +1,5 @@
 import { User } from '../../models/auth/user.model.js';
+import { Op } from "sequelize";
 
 // Metodo para crear un usuario
 const PostUser = async ( name, lastname, username, password, email, phone, idRol) => {
@@ -23,7 +24,7 @@ const PostUser = async ( name, lastname, username, password, email, phone, idRol
 
 }
 
-//Metodo para obtener un usuario por el id
+//Metodo para obtener un usuario por el id (Finalizada
 const GetUserByID = async ( id ) => {
     try {
 
@@ -41,55 +42,68 @@ const GetUserByID = async ( id ) => {
 }
 
 //Metodo para obtener un usuario por el username
-const GetUserByUsername = async ( username ) => {
+const GetUser = async ( userData ) => {
     try {
 
+        const user = await User.findAll({
+            where: {
+                [Op.or]: [
+                    {
+                        str_username_user: {
+                            [Op.iLike]: `%${userData}%`
+                        }
+                    },
+                    {
+                        str_email_user: {
+                            [Op.iLike]: `%${userData}%`
+                        }
+                    },
+                    {
+                        str_phone_user: {
+                            [Op.iLike]: `%${userData}%`
+                        }
+                    }
+                ]
+            }
+        });
+        console.log('User found:', user);
+        return user;
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+
+//Vaalidacion para encontrar un usuario
+const userByUsername = async (username) => {
+    try {
         const user = await User.findOne({
             where: {
                 str_username_user: username
             }
         });
-
         return user;
-        
     } catch (error) {
         console.log(error);
     }
 }
 
-//Metodo para obtener un usuario por el email
-const GetUserByEmail = async ( email ) => {
+const userByPassword = async (password) => {
     try {
-
         const user = await User.findOne({
             where: {
-                str_email_user: email,
+                str_password_user: password
             }
         });
-
         return user;
-        
     } catch (error) {
         console.log(error);
     }
+
 }
 
-//Metodo para obtener un usuario por el phone
-const GetUserByPhone = async ( phone ) => {
-    try {
-        
-        const user = await User.findOne({
-            where: {
-                str_phone_user: phone,
-            }
-        });
 
-        return user;
-
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 //Metodo para obtener todos los usuarios 
 const GetAllUsers = async () => {
@@ -122,13 +136,23 @@ const DeleteUserByID = async ( id ) => {
     }
 }
 
+
+
+
 export default {
     PostUser,
-    GetUserByUsername,
-    GetUserByEmail,
-    GetUserByPhone,
+
+    GetUser,
+
     GetAllUsers,
+
     GetUserByID,
+
     UpdateUserByID,
-    DeleteUserByID
+
+    DeleteUserByID,
+
+    userByUsername,
+
+    userByPassword
 };
