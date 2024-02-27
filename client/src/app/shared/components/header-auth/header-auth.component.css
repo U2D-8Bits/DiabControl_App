@@ -1,0 +1,27 @@
+.header-contaier{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--light-blue-color);
+}
+
+
+.header-contaier .logo-img{
+  width: 150px;
+  margin: 10px 0 10px 10px;
+}
+
+
+@media (max-width: 768px){
+
+  .header-contaier{
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-contaier .logo-img{
+    width: 150px;
+    margin: 10px 0 10px 0;
+  }
+}
+

@@ -1,41 +1,36 @@
 
-<form [formGroup]="myForm" (ngSubmit)="login()" class="grid h-full">
+<form [formGroup]="myForm"  class="form">
 
-  <div class="flex flex-column align-items-center justify-content-center h-auto">
-    <div class="flex align-items-center justify-center">
-      <label for="" class="text-gray-900 title">Iniciar Sesion</label>
-    </div>
+  <div class="title-txt">
+      <label for="" class="title-lbl">Iniciar Sesion</label>
   </div>
 
-  <div class=" p-3 mt-2 h-ful">
-    <div class="field mb-4">
-      <label for="username">Nombre de Usuario</label>
-      <input type="text" pInputText
-          formControlName="username"
-        class="text-base text-color surface-overlay p-2 border-2 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
+  <div class="form-controller">
+
+    <div class="user-form">
+      <label class="user-lbl" for="username">Nombre de Usuario</label>
+      <input type="text" class="user-input" formControlName="username"/>
     </div>
 
-    <div class="field">
-      <div class="flex justify-content-between">
-        <label for="password">Contraseña</label>
-        <a for="" routerLink="/auth/recover-password" class="aLink">Olvide mi contraseña</a>
+    <div class="password-form">
+      <div class="password">
+        <label class="password-lbl" for="password">Contraseña</label>
+        <a class="password-a" for="" routerLink="/auth/recover-password">Olvide mi contraseña</a>
       </div>
 
-      <input type="password" pInputText
-      formControlName="password"
-      class="text-base text-color surface-overlay p-2 border-2 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
+      <input class="password-input" type="password" formControlName="password" />
 
     </div>
 
-    <div class="flex justify-content-between">
-      <label for="">No puedes ingresar?</label>
-      <a for="" routerLink="/auth/unblock-user" class="aLink">Desbloquear cuenta</a>
+    <div class="help-form">
+      <label class="help-lbl" for="">No puedes ingresar?</label>
+      <a class="help-a" for="" routerLink="/auth/unblock-user">Desbloquear cuenta</a>
     </div>
 
   </div>
 
-  <div class="flex justify-content-center h-3rem">
-    <button pButton label="Ingresar" onclick="login()" [disabled]="myForm.invalid" class="buttonLogin pt-2 pb-2 px-3"></button>
+  <div class="button-container">
+    <button class="button" [disabled]="myForm.invalid">Ingresar</button>
   </div>
 
 

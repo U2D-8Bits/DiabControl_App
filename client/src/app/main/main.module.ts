@@ -20,7 +20,7 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
     FormsPageComponent,
     InformsPageComponent,
     ChatPageComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
   ],
   imports: [
     CommonModule,
