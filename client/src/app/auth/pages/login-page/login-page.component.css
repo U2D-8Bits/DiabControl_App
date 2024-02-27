@@ -1,11 +1,135 @@
-
-
-.aLink{
-  color: #3B82F6;
-  cursor: pointer;
-  width: 140px;
+.form{
+  background: var(--white-color);
+  border-radius: 5px;
+  width: 520px;
 }
 
-.aLink:hover{
-  color: #2563EB;
+.title-txt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-blue-color);
+  padding: 10px 0 10px 0;
+}
+
+.title-lbl{
+  color: var(--white-color);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+}
+
+
+.form-controller{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-form,
+.password-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-form .user-lbl{
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  margin: 5px 0 5px 0;
+}
+
+.user-form .user-input,
+.password-form .password-input{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--light-gray-color);
+  margin: 5px 0 5px 0;
+}
+
+.user-form .user-input:focus,
+.password-form .password-input:focus{
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
+
+
+.password-form .password{
+  font-family: var(--font-family-poppins);
+  margin: 5px 0 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password .password-lbl{
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.password .password-a,
+.help-form .help-a{
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.password .password-a:hover,
+.help-form .help-a:hover{
+  color: var(--light-blue-color);
+}
+
+
+.help-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0 5px 0;
+}
+
+.help-form .help-a{
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.form .button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container{
+  margin: 10px 0 10px 0;
+}
+
+.button{
+  width: 150px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.button:hover{
+  background-color: var(--light-blue-color);
+  color: var(--white-color);
+}
+
+
+@media (max-width: 600px) {
+
+  .form{
+    width: 100%;
+  }
+
+  .button-container{
+    margin: 10px 0 10px 0;
+  }
+
+  .password-form .password,
+  .help-form{
+    flex-direction: column;
+    align-items: baseline;
+  }
+
 }

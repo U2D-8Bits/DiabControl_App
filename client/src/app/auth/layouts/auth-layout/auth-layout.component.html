@@ -1,18 +1,4 @@
-
-
-
-    <!-- <div class="relative w-screen">
-      <shared-menu-auth class="absolute bg-white w-screen h-2rem"></shared-menu-auth>
-    </div>
-
-
-    <div class="container-login100" style="background-image: url('../../../../assets/images/bg-02.png');">
-      <div class="h-100 bg-white border-round-md p-5">
-        <router-outlet></router-outlet>
-      </div>
-    </div> -->
-
-
+<!--
     <div id="containerDiv" class=" m-0 fullScreen overflow-hidden">
 
       <div class="menuDiv">
@@ -24,10 +10,22 @@
           <router-outlet></router-outlet>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
+<div class="container-auth">
+  <header class="header">
+    <shared-header-auth></shared-header-auth>
+  </header>
 
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="footer">
+    <shared-footer></shared-footer>
+  </footer>
+</div>
 
 
 

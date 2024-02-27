@@ -12,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-
+    //guards
+    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
   },
   {
     path: '404',

@@ -1,30 +1,33 @@
-.titleApp{
-  color: #FFFFFF;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-}
 
-.fullScreen{
-  width: 100%;
-  height: 100%;
-}
-
-.menuDiv{
-  height: 10%;
-}
-
-.loginDiv{
-  height: 90%;
-}
-
-
-.geometryBord{
-  border-radius: 6px;
-  padding: 2rem;
-}
-
-#containerDiv{
-  background-image: linear-gradient(60deg, #28AADC, #3657AC);
+.container-auth{
+  /* position: relative; */
+  width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  /* position: absolute; */
+  top: 0;
+  width: 100%;
+
+}
+
+.container-auth .main{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main{
+  background: var(--primary-color);
+}
+
+.footer{
+  /* Mandamos a la parte inferior de la pantalla */
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
 }

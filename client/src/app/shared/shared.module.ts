@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
-import { MenuAuthComponent } from './components/menu-auth/menu-auth.component';
+import { HeaderAuthComponent } from './components/header-auth/header-auth.component';
+import { HeaderMainComponent } from './components/header-main/header-main.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
     Error404PageComponent,
-    MenuAuthComponent,
+    HeaderAuthComponent,
+    HeaderMainComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule
   ],
   exports: [
     Error404PageComponent,
-    MenuAuthComponent,
+    HeaderAuthComponent,
+    HeaderMainComponent,
+    FooterComponent,
   ]
 })
 export class SharedModule { }

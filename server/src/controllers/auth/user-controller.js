@@ -11,6 +11,9 @@ const PostUserController = async (req, res) => {
         const user = await userService.PostUserService(name, lastname, username, password, email, phone, idRol);
         console.log("Valor de user en Controller =>", {user})
 
+        const val = 0;
+
+
         if(user === 1){
             return res.status(400).json({
                 status: false,
@@ -35,10 +38,55 @@ const PostUserController = async (req, res) => {
             });
         }
 
-        if(user === 4){
+        //Validaciones de numero de telefono
+        const userPhone = await userService.GetUserByPhoneService(phone);
+        console.log("Valor de userPhone en Controller =>", userPhone);
+
+        if( userPhone === 1 ){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono requiere ser de 10 digitos",
+                body:[],
+            });
+        }
+
+        if( userPhone === 2){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono no es valido",
+                body:[],
+            });
+        }
+
+        if( userPhone === 3){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono no es valido",
+                body:[],
+            });
+        }
+
+        if( userPhone === 4){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono ingresado no tiene un formato valido",
+                body:[],
+            });
+        }
+
+        if( userPhone === 5){
             return res.status(400).json({
                 status: false,
                 message: "El telefono ingresado ya existe",
+                body:[],
+            });
+        }
+        
+
+        if(user === 4){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono ingresado ya existe xd",
                 body:[],
             });
         }
@@ -51,11 +99,14 @@ const PostUserController = async (req, res) => {
             });
         }
 
-        res.status(200).json({
-            status: true,
-            message: "El usuario se creo correctamente",
-            body:[],
-        })
+        if( val === 0){
+            res.status(200).json({
+                status: true,
+                message: "El usuario se creo correctamente",
+                body:[],
+            })
+        }
+
         
     } catch (error) {
         res.status(500).json({
@@ -137,11 +188,11 @@ const GetUserByIDController = async (req, res) => {
 }
 
 //Metodo para obtener el usuario por username
-const GetUserByUsernameController = async ( req, res) => {
+const GetUserController = async ( req, res) => {
     try {
 
-        const { username } = req.params;
-        const user = await userService.GetUserByUsernameService(username);
+        const { userData } = req.body;
+        const user = await userService.GetUserByUsernameService(userData);
 
         if(user === 1){
             return res.status(400).json({
@@ -154,7 +205,7 @@ const GetUserByUsernameController = async ( req, res) => {
         if(user === 2){
             return res.status(400).json({
                 status: false,
-                message: "El nombre de usuario ya existe",
+                message: "El nombre de usuario no existe",
                 body:[],
             })
         }
@@ -164,6 +215,8 @@ const GetUserByUsernameController = async ( req, res) => {
             message: "El usuario se obtuvo correctamente",
             body:user,
         })
+
+
         
     } catch (error) {
         res.status(500).json({
@@ -220,8 +273,25 @@ const GetUserByPhoneNumberController = async ( req, res) => {
 
         const { phone } = req.params;
         const userPhone = await userService.GetUserByPhoneService(phone);
+        console.log("Valor de UserPhone en controller =>",userPhone);
 
         if(userPhone === 1){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono requiere ser de 10 digitos",
+                body:[],
+            })
+        }
+
+        if(userPhone === 2){
+            return res.status(400).json({
+                status: false,
+                message: "El telefono ingresado no es válido",
+                body:[],
+            })
+        }
+
+        if( userPhone === 3){
             return res.status(400).json({
                 status: false,
                 message: "El telefono ingresado no es válido",
@@ -248,11 +318,40 @@ const GetUserByPhoneNumberController = async ( req, res) => {
     }
 }
 
+
+
+//Metodo para login
+const PostLoginController = async ( req, res) => {
+    try {
+
+        const { userData } = req.body;
+
+        console.log("Valor que llega a Controller Login =>",req.body)
+
+
+        const user = await userService.PostLoginService(userData);
+
+        res.json(user);
+        
+        console.log("Respuesta de com =>", res.json(user));
+
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Error en el servidor" + error,
+            body:[],
+        })
+    }
+}
+
 export default {
     GetAllUsersController,
     GetUserByIDController,
-    GetUserByUsernameController,
     GetUserByEmailController,
     GetUserByPhoneNumberController,
     PostUserController,
+    GetUserController,
+
+
+    PostLoginController
 }
