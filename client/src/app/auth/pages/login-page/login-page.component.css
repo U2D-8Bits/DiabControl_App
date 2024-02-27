@@ -43,7 +43,7 @@
 .password-form .password-input{
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid var(--light-gray-color);
+  border: 1px solid var(--gray-color);
   margin: 5px 0 5px 0;
 }
 

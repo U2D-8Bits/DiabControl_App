@@ -35,7 +35,7 @@
   --denary-color: #FF5722;
   --white-color: #FFFFFF;
   --black-color: #000000;
-  --gray-color: #B4B4B4;
+  --gray-color: #8a8a8a;
   --light-gray-color: #E5E5E5;
   --dark-gray-color: #333333;
   --light-blue-color: #1E3A8A;
@@ -90,11 +90,77 @@
 
 }
 
+/* APARTADO RECOVER & UNBLOCK ACCOUNT */
+
+/* Mensaje Informativo */
+.message-txt{
+  padding: 10px;
+}
+
+.message-txt .message{
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-md);
+}
+
+.email-container{
+  padding: 10px;
+}
+
+.email-container .email{
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--gray-color);
+  margin: 5px 0 5px 0;
+}
+
+.email-container .email:focus{
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
 
 
+/* Boton Regresar */
+.button-return{
+  width: 130px;
+  height: 50px;
+  background: var(--primary-color);
+  border-radius: 5px;
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 0 10px;
+}
 
+.button-return span{
+  font-size: 15px;
+}
 
+.button-return:hover{
+  background: var(--light-blue-color);
+}
 
+/* Boton Enviar */
+.button-send{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.button-send .button{
+  width: 80px;
+  height: 50px;
+  background: var(--primary-color);
+  border-radius: 5px;
+  color: var(--white-color);
+  transition: 0.3s;
+}
+
+.button-send .button:hover{
+  background: var(--light-blue-color);
+}
 
 
 

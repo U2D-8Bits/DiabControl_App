@@ -1,19 +1,24 @@
-<form class="grid m-0 w-auto">
+<form class="form">
 
-  <div class="col-12 flex justify-content-start">
-    <button pButton label="Regresar" icon="pi pi-angle-left" class="buttonLogin pt-2 pb-2 px-3" routerLink="login"></button>
+
+  <button class="button-return" routerLink="login">
+    <span class="material-symbols-outlined">
+      arrow_back_ios
+    </span>
+    <label for="">Regresar</label>
+  </button>
+
+  <div class="message-txt">
+    <label class="message" for="">Si no recuerdas tu contraseña porfavor ingresa tu correo electrónico, enviaremos ahí
+      una nueva contraseña para ti.</label>
   </div>
 
-  <div class="col-12">
-    <label for="">Si no recuerdas tu contraseña porfavor ingresa tu correo electrónico, enviaremos ahí una nueva contraseña para ti.</label>
+  <div class="email-container">
+    <input type="text" class="email">
   </div>
 
-  <div class="col'12">
-    <input type="text" pInputText class="text-base text-color surface-overlay p-2 border-2 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
-  </div>
-
-  <div class="col-12 flex justify-content-center">
-    <button pButton label="Enviar" class="buttonLogin pt-2 pb-2 px-3"></button>
+  <div class="button-send">
+    <button class="button">Enviar</button>
   </div>
 
 </form>
