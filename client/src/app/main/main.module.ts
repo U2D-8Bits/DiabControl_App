@@ -10,6 +10,8 @@ import { MainRoutingModule } from './main-routing.module';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
+import { MaterialModule } from '../material/material.module';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 
 
@@ -21,12 +23,14 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
     InformsPageComponent,
     ChatPageComponent,
     WelcomePageComponent,
+    AboutPageComponent,
   ],
   imports: [
     CommonModule,
 
     MainRoutingModule,
     PrimeNgModule,
+    MaterialModule,
 
     SharedModule,
     ReactiveFormsModule

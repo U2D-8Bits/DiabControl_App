@@ -1,27 +1,45 @@
-<div class="generalContainer m-0 fullScreen overflow-hidden m-0">
+<div class="container-main">
+  <header class="header">
 
-  <div class="header m-0 pl-2 pr-2">
-    <!-- Contenedor de menu principal -->
-    <div>
-      <label for="">menu</label>
+    <div class="logo-container">
+      <img routerLink="/home/" class="logo" src="../../../../assets/images/LogoMed.png" alt="MedSync">
     </div>
 
-    <!-- Contenedor de nombre de usuario, y (menu desplegable o cerrar sesion) -->
-    <div class="containerActions">
-      <label for="">username</label>
-      <label for="">logOut</label>
+    <div class="menu-container">
+      <button class="linker">
+        <a routerLink="/home/">Home</a>
+      </button>
+
+      <button class="linker">
+        <a routerLink="/home/forms">Forms</a>
+      </button>
+
+      <button class="linker">
+        <a routerLink="/home/about">About</a>
+      </button>
+
+      <button  class="linker">
+        <a routerLink="/home/chat">Chats</a>
+      </button>
+
+      <button class="linker">
+        <span class="material-symbols-outlined">
+          expand_more
+        </span>
+      </button>
+
+
     </div>
 
-  </div>
+  </header>
 
-  <div class="body">
+  <main class="main">
     <router-outlet></router-outlet>
-  </div>
+  </main>
 
-  <div class="footer bg-blue-900 flex justify-content-center align-items-center w-screen p-1">
-    <label for="">MedsyncApp 2023</label>
-  </div>
 
+  <footer class="footer">
+    <shared-footer></shared-footer>
+  </footer>
 </div>
-
 
