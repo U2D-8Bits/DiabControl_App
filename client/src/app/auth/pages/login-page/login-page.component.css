@@ -32,7 +32,8 @@
   flex-direction: column;
 }
 
-.user-form .user-lbl{
+.user-form .user-lbl,
+.password .password-lbl{
   font-family: var(--font-family-poppins);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
@@ -74,21 +75,6 @@ form .field input:focus ~ span{
   transform: translateY(-50%);
 }
 
-/* .user-input,
-.password-input{
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid var(--gray-color);
-  margin: 5px 0 5px 0;
-} */
-
-/* .user-form .user-input:focus,
-.password-form .password-input:focus{
-  outline: none;
-  border: 1px solid var(--primary-color);
-} */
-
-
 .password-form .password{
   font-family: var(--font-family-poppins);
   margin: 5px 0 5px 0;
@@ -97,19 +83,12 @@ form .field input:focus ~ span{
   align-items: center;
 }
 
-.password .password-lbl{
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-bold);
-}
-
-.password .password-a,
-.help-form .help-a{
+a{
   color: var(--primary-color);
   text-decoration: none;
 }
 
-.password .password-a:hover,
-.help-form .help-a:hover{
+a:hover{
   color: var(--light-blue-color);
 }
 
@@ -120,36 +99,6 @@ form .field input:focus ~ span{
   align-items: center;
   margin: 5px 0 5px 0;
 }
-
-.help-form .help-a{
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.form .button-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button-container{
-  margin: 10px 0 10px 0;
-}
-
-.button{
-  width: 150px;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.button:hover{
-  background-color: var(--light-blue-color);
-  color: var(--white-color);
-}
-
 
 @media (max-width: 600px) {
 
