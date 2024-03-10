@@ -9,7 +9,12 @@
 
     <div class="user-form">
       <label class="user-lbl" for="username">Nombre de Usuario</label>
-      <input type="text" class="user-input" formControlName="username"/>
+      <div class="field">
+        <input type="text" class="user-input" formControlName="username"/>
+        <span class="material-symbols-outlined">
+          person
+        </span>
+      </div>
     </div>
 
     <div class="password-form">
@@ -17,9 +22,12 @@
         <label class="password-lbl" for="password">Contraseña</label>
         <a class="password-a" for="" routerLink="/auth/recover-password">Olvide mi contraseña</a>
       </div>
-
-      <input class="password-input" type="password" formControlName="password" />
-
+      <div class="field">
+        <input class="password-input" type="password" formControlName="password" />
+        <span class="material-symbols-outlined">
+          key
+        </span>
+      </div>
     </div>
 
     <div class="help-form">
