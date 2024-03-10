@@ -103,20 +103,43 @@
 }
 
 .email-container{
-  padding: 10px;
-}
-
-.email-container .email{
-  padding: 5px;
+  height: 50px;
+  position: relative;
   width: 100%;
-  border-radius: 5px;
-  border: 1px solid var(--gray-color);
-  margin: 5px 0 5px 0;
 }
 
-.email-container .email:focus{
-  outline: none;
-  border: 1px solid var(--primary-color);
+.email-container input{
+  margin: 0 10px 0 10px;
+  height: 100%;
+  width: 95%;
+  outline : none;
+  padding: 0 18px 0 48px;
+  font-size: 16px;
+  border: 1px solid var(--gray-color);
+  border-radius: 5px;
+}
+
+.email-container input:focus{
+  border: 2px solid var(--primary-color);
+}
+
+.email-container input::placeholder{
+  color: var(--gray-color);
+}
+
+
+
+.email-container input:focus ~ span{
+  color: var(--primary-color);
+}
+
+.email-container span{
+  position: absolute;
+  left: 27px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-color);
+  transition: 0.3s;
 }
 
 
