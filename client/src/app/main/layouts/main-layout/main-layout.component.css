@@ -67,11 +67,48 @@
   width: 100%;
 }
 
+#light-menu{
+  display: none;
+}
+
+#bottomMenu{
+  display: none;
+}
 
 @media (max-width: 600px){
   .main{
     display: flex;
     justify-content: center;
     padding: 0 10px 0 10px;
+  }
+
+  .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-container{
+    display: none;
+  }
+
+  #light-menu{
+    display: flex;
+  }
+
+  .vert-icon{
+    color: var(--dark-gray-color);
+  }
+
+  .footer{
+    display: none;
+  }
+
+  #bottomMenu{
+    display: flex;
+    width: 100%;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
   }
 }

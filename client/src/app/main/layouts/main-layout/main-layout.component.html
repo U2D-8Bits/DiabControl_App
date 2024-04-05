@@ -7,30 +7,37 @@
 
     <div class="menu-container">
       <button class="linker">
-        <a routerLink="/home/">Home</a>
+        <a routerLink="/home/">Inicio</a>
       </button>
 
       <button class="linker">
-        <a routerLink="/home/forms">Forms</a>
+        <a routerLink="/home/forms">Formularios</a>
       </button>
 
       <button class="linker">
-        <a routerLink="/home/about">About</a>
+        <a routerLink="/home/about">Acerca De</a>
       </button>
 
       <button  class="linker">
         <a routerLink="/home/chat">Chats</a>
       </button>
 
-      <button class="linker">
+      <button class="linker" [matMenuTriggerFor]="menu">
         <span class="material-symbols-outlined">
           expand_more
         </span>
       </button>
-
-
+      <mat-menu id="float-menu" #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>account_circle</mat-icon>
+          <span>Mi cuenta</span>
+        </button>
+        <button id="float-button" mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span> Salir </span>
+        </button>
+      </mat-menu>
     </div>
-
   </header>
 
   <main class="main">
@@ -41,5 +48,38 @@
   <footer class="footer">
     <shared-footer></shared-footer>
   </footer>
+
+  <footer id="bottomMenu">
+    <button id="light-menu" mat-icon-button [matMenuTriggerFor]="menuLight">
+      <mat-icon class="vert-icon">expand_less</mat-icon>
+    </button>
+    <mat-menu #menuLight="matMenu" yPosition="above">
+      <button mat-menu-item>
+        <mat-icon>house</mat-icon>
+        <span>Inicio</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>article</mat-icon>
+        <span>Formularios</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>info</mat-icon>
+        <span>Acerca De</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>chat</mat-icon>
+        <span>Chats</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>Mi cuenta</span>
+      </button>
+      <button id="float-button" mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span> Salir </span>
+      </button>
+    </mat-menu>
+  </footer>
+
 </div>
 
