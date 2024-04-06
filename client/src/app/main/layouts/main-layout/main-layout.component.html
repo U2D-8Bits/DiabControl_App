@@ -28,11 +28,11 @@
         </span>
       </button>
       <mat-menu id="float-menu" #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item routerLink="/home/settings">
           <mat-icon>account_circle</mat-icon>
           <span>Mi cuenta</span>
         </button>
-        <button id="float-button" mat-menu-item>
+        <button id="float-button" mat-menu-item routerLink="/auth/">
           <mat-icon>exit_to_app</mat-icon>
           <span> Salir </span>
         </button>
@@ -54,27 +54,27 @@
       <mat-icon class="vert-icon">expand_less</mat-icon>
     </button>
     <mat-menu #menuLight="matMenu" yPosition="above">
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/home/">
         <mat-icon>house</mat-icon>
         <span>Inicio</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/home/forms">
         <mat-icon>article</mat-icon>
         <span>Formularios</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/home/about">
         <mat-icon>info</mat-icon>
         <span>Acerca De</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/home/chat">
         <mat-icon>chat</mat-icon>
         <span>Chats</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/home/settings">
         <mat-icon>account_circle</mat-icon>
         <span>Mi cuenta</span>
       </button>
-      <button id="float-button" mat-menu-item>
+      <button id="float-button" mat-menu-item routerLink="/auth/">
         <mat-icon>exit_to_app</mat-icon>
         <span> Salir </span>
       </button>

@@ -21,6 +21,8 @@
   overflow: hidden;
 }
 
+
+
 :root{
   /* Paleta de Colores */
   --primary-color: #1E3A8A;
@@ -189,13 +191,12 @@
 
 
 
-
-
-
-
-
-
-
-
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  width: 100vw;
+  background-color: #009688;
+ }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
