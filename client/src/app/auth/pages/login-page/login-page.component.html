@@ -1,45 +1,61 @@
+<div class="main-container">
 
-<form [formGroup]="myForm"  class="form">
+  <div class="article">
 
-  <div class="title-txt">
-      <label for="" class="title-lbl">Iniciar Sesion</label>
-  </div>
-
-  <div class="form-controller">
-
-    <div class="user-form">
-      <label class="user-lbl" for="username">Nombre de Usuario</label>
-      <div class="field">
-        <input type="text" class="user-input" formControlName="username"/>
-        <span class="material-symbols-outlined">
-          person
-        </span>
-      </div>
+    <div class="title">
+      <label id="dia" for="">Diab<label id="care" for="">Control</label></label>
     </div>
 
-    <div class="password-form">
-      <div class="password">
-        <label class="password-lbl" for="password">Contraseña</label>
-        <a class="password-a" for="" routerLink="/auth/recover-password">Olvide mi contraseña</a>
-      </div>
-      <div class="field">
-        <input class="password-input" type="password" formControlName="password" />
-        <span class="material-symbols-outlined">
-          key
-        </span>
-      </div>
-    </div>
-
-    <div class="help-form">
-      <label class="help-lbl" for="">No puedes ingresar?</label>
-      <a class="help-a" for="" routerLink="/auth/unblock-user">Desbloquear cuenta</a>
+    <div class="phrase">
+      <label for="">DiabControl es tu compañero en el camino hacia un control óptimo de la diabetes. Nuestra plataforma te ofrece una manera fácil y segura de llevar un seguimiento con tu médico especialista. Con características intuitivas y herramientas personalizadas, estamos aquí para ayudarte a tomar el control de tu salud de manera asincrónica, en cualquier momento y desde cualquier lugar.</label>
     </div>
 
   </div>
 
-  <div class="button-container">
-    <button class="button">Ingresar</button>
+  <div class="form-container">
+    <form [formGroup]="myForm" class="form">
+
+      <div class="title-txt">
+        <label for="" class="title-lbl">Iniciar Sesion</label>
+      </div>
+
+      <div class="form-controller">
+
+        <div class="user-form">
+          <label class="user-lbl" for="username">Usuario</label>
+          <div class="field">
+            <input type="text" class="user-input" formControlName="username" />
+            <span class="material-symbols-outlined">
+              person
+            </span>
+          </div>
+        </div>
+
+        <div class="password-form">
+          <div class="password">
+            <label class="password-lbl" for="password">Contraseña</label>
+          </div>
+          <div class="field">
+            <input class="password-input" type="password" formControlName="password" />
+            <span class="material-symbols-outlined">
+              key
+            </span>
+          </div>
+        </div>
+
+        <div class="help-form">
+          <label class="help-lbl" for="">No puedes ingresar?</label>
+          <a class="help-a" for="" routerLink="/auth/unblock-user">Desbloquear cuenta</a>
+          <a class="password-a" for="" routerLink="/auth/recover-password">Olvide mi contraseña</a>
+        </div>
+
+      </div>
+
+      <div class="button-container">
+        <button class="button">Ingresar</button>
+      </div>
+
+
+    </form>
   </div>
-
-
-</form>
+</div>

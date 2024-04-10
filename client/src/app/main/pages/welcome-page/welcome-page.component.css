@@ -42,6 +42,37 @@
   justify-content: center;
 }
 
-.img-container img{
+.landing-phone{
+  display: none;
+}
+
+
+@media only screen and (max-width: 768px){
+
+  .landing-container{
+    display: none;
+  }
+
+  .main{
+    overflow-y: auto;
+  }
+
+  .landing-phone{
+    display: block;
+  }
+
+  .img-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .doc-img{
+    max-width: 100%;
+    height: auto;
+  }
 
 }
+
+

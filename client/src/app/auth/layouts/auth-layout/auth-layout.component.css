@@ -1,6 +1,5 @@
-
+/*
 .container-auth{
-  /* position: relative; */
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -8,7 +7,6 @@
 }
 
 .header{
-  /* position: absolute; */
   top: 0;
   width: 100%;
 
@@ -26,8 +24,6 @@
 }
 
 .footer{
-  /* Mandamos a la parte inferior de la pantalla */
-  /* position: absolute; */
   bottom: 0;
   width: 100%;
 }
@@ -38,4 +34,25 @@
     justify-content: center;
     padding: 0 10px 0 10px;
   }
+} */
+
+
+.auth-container{
+  max-width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
+
+.header{
+  width: 100%;
+  height: 10%;
+}
+
+.main{
+  width: 100%;
+  height: 90%;
+}
+
+
