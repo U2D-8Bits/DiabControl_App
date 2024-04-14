@@ -1,11 +1,11 @@
-<div class="container-main">
-  <header class="header">
+<div class="main-controller">
 
-    <div class="logo-container">
-      <img routerLink="/home/" class="logo" src="../../../../assets/images/LogoMed.png" alt="MedSync">
+  <div class="header-controller">
+    <div class="logo-controller">
+      <img class="logo" src="../../../../assets/icons/DiabControl_Banner_white.svg" alt="logo">
     </div>
 
-    <div class="menu-container">
+    <div class="menu-controller">
       <button class="linker">
         <a routerLink="/home/">Inicio</a>
       </button>
@@ -22,64 +22,61 @@
         <a routerLink="/home/chat">Chats</a>
       </button>
 
-      <button class="linker" [matMenuTriggerFor]="menu">
-        <span class="material-symbols-outlined">
-          expand_more
-        </span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="menu-icon">more_vert</mat-icon>
       </button>
-      <mat-menu id="float-menu" #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>account_circle</mat-icon>
-          <span>Mi cuenta</span>
-        </button>
-        <button id="float-button" mat-menu-item>
-          <mat-icon>exit_to_app</mat-icon>
-          <span> Salir </span>
-        </button>
-      </mat-menu>
     </div>
-  </header>
 
-  <main class="main">
-    <router-outlet></router-outlet>
-  </main>
-
-
-  <footer class="footer">
-    <shared-footer></shared-footer>
-  </footer>
-
-  <footer id="bottomMenu">
-    <button id="light-menu" mat-icon-button [matMenuTriggerFor]="menuLight">
-      <mat-icon class="vert-icon">expand_less</mat-icon>
-    </button>
-    <mat-menu #menuLight="matMenu" yPosition="above">
-      <button mat-menu-item>
-        <mat-icon>house</mat-icon>
-        <span>Inicio</span>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home/settings">
+        <mat-icon>person</mat-icon>
+        <span>Mi Cuenta</span>
       </button>
-      <button mat-menu-item>
-        <mat-icon>article</mat-icon>
-        <span>Formularios</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>info</mat-icon>
-        <span>Acerca De</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>chat</mat-icon>
-        <span>Chats</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>account_circle</mat-icon>
-        <span>Mi cuenta</span>
-      </button>
-      <button id="float-button" mat-menu-item>
-        <mat-icon>exit_to_app</mat-icon>
-        <span> Salir </span>
+      <button mat-menu-item routerLink="/auth/">
+        <mat-icon>logout</mat-icon>
+        <span>Salir</span>
       </button>
     </mat-menu>
-  </footer>
+  </div>
+
+  <div class="body-controller">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="float-controller">
+    <button mat-icon-button [matMenuTriggerFor]="floatMenu" aria-label="Example icon-button with a menu">
+      <span id="expand-arrow" class="material-symbols-outlined">
+        expand_less
+      </span>
+    </button>
+  </div>
+
+  <mat-menu #floatMenu="matMenu">
+    <button mat-menu-item routerLink="/home/">
+      <mat-icon>home</mat-icon>
+      <span>Inicio</span>
+    </button>
+    <button mat-menu-item routerLink="/home/forms">
+      <mat-icon>description</mat-icon>
+      <span>Formulario</span>
+    </button>
+    <button mat-menu-item routerLink="/home/about">
+      <mat-icon>info</mat-icon>
+      <span>Acerca De</span>
+    </button>
+    <button mat-menu-item routerLink="/home/chat">
+      <mat-icon>forum</mat-icon>
+      <span>Chats</span>
+    </button>
+    <button mat-menu-item routerLink="/home/settings">
+      <mat-icon>person</mat-icon>
+      <span>Mi Cuenta</span>
+    </button>
+    <button mat-menu-item routerLink="/auth/">
+      <mat-icon>logout</mat-icon>
+      <span>Salir</span>
+    </button>
+  </mat-menu>
 
 </div>
 

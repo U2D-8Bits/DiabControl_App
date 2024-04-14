@@ -1,114 +1,93 @@
-.container-main{
+
+.main-controller{
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.header{
-  top: 0;
+/*  Header CSS */
+.header-controller{
   width: 100%;
-  height: 50px;
+  height: 10%;
   background: var(--light-blue-color);
+}
+
+.header-controller{
   display: flex;
-  align-items: center;
-  padding: 10px;
   justify-content: space-between;
-}
-
-
-.logo-container{
-  display: flex;
-  width: 200px;
-  height: 60px;
-  padding: 10px;
   align-items: center;
+  padding: 0 10px 0 10px;
 }
 
-.logo{
-  object-fit: contain;
-  cursor: pointer;
+.logo-controller img{
+  width: 150px;
 }
 
-.menu-container{
-  width: 425px;
+.menu-controller{
+  height: 100%;
+  width: 400px;
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.linker{
+
+.linker a{
   color: var(--white-color);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-md);
-  cursor: pointer;
+  font-family: var(--font-family-poppins);
 }
 
-.linker span{
-  margin-top: 10px;
+mat-icon{
+  color: var(--white-color);
 }
 
-.linker:hover{
-  color: var(--primary-color);
+.linker a:hover{
+  color: var(--light-yellow-color);
+  transition: 0.3s;
 }
 
-.container-main .main{
-  flex: 1;
-}
-
-.main{
-  background: var(--white-color);
-}
-
-
-.footer{
-  bottom: 0;
+/* Body CSS */
+.body-controller{
   width: 100%;
+  height: 90%;
 }
 
-#light-menu{
+.float-controller{
   display: none;
 }
 
-#bottomMenu{
-  display: none;
-}
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
 
-@media (max-width: 600px){
-  .main{
-    display: flex;
-    justify-content: center;
-    padding: 0 10px 0 10px;
-  }
-
-  .header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .menu-container{
+  .menu-controller {
     display: none;
   }
 
-  #light-menu{
-    display: flex;
-  }
-
-  .vert-icon{
-    color: var(--dark-gray-color);
-  }
-
-  .footer{
-    display: none;
-  }
-
-  #bottomMenu{
-    display: flex;
+  .logo-controller {
     width: 100%;
-    height: 35px;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
+
+  /* Floating Menu CSS */
+  .float-controller {
+    position: fixed;
+    bottom: 20px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #expand-arrow{
+    font-size: 30px;
+    color: var(--white-color);
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: var(--black-color);
+  }
+
 }

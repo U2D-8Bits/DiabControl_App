@@ -3,12 +3,12 @@
   justify-content: space-between;
   align-items: center;
   background: var(--light-blue-color);
+  height: 100%;
 }
 
 
 .header-contaier .logo-img{
   width: 150px;
-  margin: 10px 0 10px 10px;
 }
 
 
@@ -17,11 +17,6 @@
   .header-contaier{
     flex-direction: column;
     justify-content: center;
-  }
-
-  .header-contaier .logo-img{
-    width: 150px;
-    margin: 10px 0 10px 0;
   }
 }
 
