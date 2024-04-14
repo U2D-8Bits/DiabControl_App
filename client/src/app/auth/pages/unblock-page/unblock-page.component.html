@@ -1,25 +1,26 @@
-<form class="form">
+<div class="container-main">
 
-  <button class="button-return" routerLink="login">
-    <span class="material-symbols-outlined">
-      arrow_back_ios
-    </span>
-    <label for="">Regresar</label>
-  </button>
+  <form class="form">
 
-  <div class="message-txt">
-    <label for="message">Si su cuenta se encuentra bloqueada porfavor ingrese el correo electrónico a la que este asignada, enviaremos ahí una notificación cuando ya este nuevamente activa.</label>
-  </div>
+    <div class="message-txt">
+      <label for="message">Si su cuenta se encuentra bloqueada porfavor ingrese el correo electrónico a la que este asignada, enviaremos ahí una notificación cuando ya este nuevamente activa.</label>
+    </div>
 
-  <div class="email-container">
-    <input type="text" class="email" placeholder="Ingrese su email">
-    <span class="material-symbols-outlined">
-      mail
-    </span>
-  </div>
+    <div class="email-container">
+      <input type="text" class="email" placeholder="Ingrese su email">
+      <span class="material-symbols-outlined">
+        mail
+      </span>
+    </div>
 
-  <div class="button-container">
-    <button class="button">Enviar</button>
-  </div>
+    <div class="button-container">
+      <button class="button">Enviar</button>
+    </div>
 
-</form>
+    <div class="return">
+      <a href="" routerLink="login">Regresar</a>
+    </div>
+
+  </form>
+
+</div>

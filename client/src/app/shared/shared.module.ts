@@ -4,6 +4,7 @@ import { Error404PageComponent } from './pages/error404-page/error404-page.compo
 import { HeaderAuthComponent } from './components/header-auth/header-auth.component';
 import { HeaderMainComponent } from './components/header-main/header-main.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -15,7 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
   exports: [
     Error404PageComponent,
