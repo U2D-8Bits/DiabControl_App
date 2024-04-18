@@ -22,10 +22,13 @@
 }
 
 .firstSection, .scndSection{
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 10px 0 10px;
+  padding: 0 10px 0 10px; */
+
+  display: flex;
+  grid-template-columns: 1fr;
 }
 
 .contentOne, .contentTwo{
