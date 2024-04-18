@@ -1,11 +1,11 @@
 /* PRIMENG IMPORTS TO USE IN STYLE CSS */
-@import "primeng/resources/themes/lara-light-blue/theme.css";
+/* @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* FONTS */
 /* Roboto Font */
@@ -197,13 +197,28 @@
 }
 
 
+/* Estilos de textos*/
 
+.tittle-info{
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+}
 
-/* html, body {
-  height: 100%;
-  width: 100vw;
- }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+.phrase{
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
 
+  text-align: justify;
+}
 
+@media screen and (max-width: 768px){
+  .tittle-info{
+    font-size: var(--font-size-3xl);
+  }
 
+  .phrase{
+    font-size: var(--font-size-md);
+  }
+}

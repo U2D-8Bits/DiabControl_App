@@ -86,8 +86,14 @@ mat-icon{
   #expand-arrow{
     font-size: 30px;
     color: var(--white-color);
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: var(--black-color);
+  }
+
+  .mat-mdc-icon-button.mat-mdc-button-base{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-blue-color);
+    opacity: 0.9;
   }
 
 }
