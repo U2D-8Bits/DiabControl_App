@@ -1,34 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Error404PageComponent } from './shared/pages/error404-page/error404-page.component';
 
-const routes: Routes = [
-  {
-    path:'auth',
-    //Guards
-
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) // Lazy load module
-    //medsync.com/auth/login
-  },
-  {
-    path: 'home',
-    //guards
-    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
-  },
-  {
-    path: '404',
-    component: Error404PageComponent
-  },
-  {
-    path: '',
-    redirectTo: 'auth',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: '404',
-  }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
