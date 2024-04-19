@@ -19,6 +19,7 @@
   height: 100vh;
 }
 
+
 .grid-controller{
   display: grid;
   grid-template-columns: 1fr;

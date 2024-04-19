@@ -16,7 +16,6 @@ const routes: Routes = [
       {path:'recover-password', component: RecoverPageComponent},
       {path:'**', redirectTo: 'login'}
     ]
-
   }
 ];
 
