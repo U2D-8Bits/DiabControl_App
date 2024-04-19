@@ -5,8 +5,9 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { MenubarModule } from 'primeng/menubar';
+import { SpeedDialModule } from 'primeng/speeddial';
 
-
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [],
@@ -15,13 +16,17 @@ import { MenubarModule } from 'primeng/menubar';
     ButtonModule,
     InputTextModule,
     PasswordModule,
-    MenubarModule
+    MenubarModule,
+    SpeedDialModule,
+    ToastModule
   ],
   exports: [
     ButtonModule,
     InputTextModule,
     PasswordModule,
-    MenubarModule
+    MenubarModule,
+    SpeedDialModule,
+    ToastModule
   ]
 })
 export class PrimeNgModule { }
