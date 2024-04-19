@@ -1,4 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Add application styles & imports */
+
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+
+  /* Colors */
+  --primary-color: #1E3A8A;
+  --secondary-color: #FFC107;
+  --tertiary-color: #FF5722;
+  --quaternary-color: #FF5722;
+  --quinary-color: #FF5722;
+  --senary-color: #FF5722;
+  --septenary-color: #FF5722;
+  --octonary-color: #FF5722;
+  --nonary-color: #FF5722;
+  --denary-color: #FF5722;
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+  --gray-color: #8a8a8a;
+  --light-gray-color: #D9D9D9;
+  --lightes-gray-color: #E5E5E5;
+  --dark-gray-color: #333333;
+  --light-blue-color: #1E3A8A;
+  --light-yellow-color: #FFC107;
+  --light-red-color: #FF5722;
+  --light-green-color: #4CAF50;
+  --light-purple-color: #9C27B0;
+  --light-orange-color: #FF9800;
+  --light-pink-color: #E91E63;
+  --light-cyan-color: #00BCD4;
+  --light-teal-color: #009688;
+  --light-indigo-color: #3F51B5;
+  --light-lime-color: #CDDC39;
+  --light-amber-color: #FFC107;
+  --light-deep-orange-color: #FF5722;
+  --light-deep-purple-color: #673AB7;
+  --light-blue-grey-color: #607D8B;
+  --light-brown-color: #795548
+
+  /* Fonts */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 4rem;
+  --font-size-7xl: 5rem;
+  --font-size-8xl: 6rem;
+  --font-size-9xl: 7rem;
+  --font-size-10xl: 8rem;
+  --font-size-11xl: 9rem;
+  --font-size-12xl: 10rem;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-bolder: 700;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+  --spacing-9: 2.25rem;
+  --spacing-10: 2.5rem;
+  --spacing-11: 2.75rem;
+  --spacing-12: 3rem;
+  --spacing-13: 3.25rem;
+  --spacing-14: 3.5rem;
+  --spacing-15: 3.75rem;
+  --spacing-16: 4rem;
+  --spacing-17: 4.25rem;
+  --spacing-18: 4.5rem;
+  --spacing-19: 4.75rem;
+  --spacing-20:
+}
