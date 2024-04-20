@@ -8,13 +8,8 @@ import { PrimeNGConfig } from 'primeng/api';
 export class AppComponent implements OnInit {
 
   constructor(private primengConfig: PrimeNGConfig) {}
-  title = 'DiabControl';
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-    this.primengConfig.ripple = true;
+  ngOnInit() {
+      this.primengConfig.ripple = true;
   }
-
-
-
 }
