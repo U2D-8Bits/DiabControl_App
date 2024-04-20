@@ -18,3 +18,32 @@ a{
 a:hover{
   color: var(--blue-900);
 }
+
+
+
+.title-container label{
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.diab{
+  color: var(--light-cyan-color);
+}
+
+.control{
+  color: var(--light-green-color);
+}
+
+
+@media screen and (max-width: 768px){
+
+  #title-controller{
+    display: none;
+  }
+
+  .card{
+    width: auto;
+    border: 1px solid red;
+  }
+
+}
