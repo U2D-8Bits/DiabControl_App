@@ -1,2 +1,12 @@
-<p>home-layout works!</p>
-<router-outlet></router-outlet>
+<div class="body-controller">
+  <p-toolbar>
+    <img class="img-logo" src="../../../../assets/icons/DiabControl_Banner_white_200x50.svg" alt="">
+    <p-menubar [model]="userItems"></p-menubar>
+  </p-toolbar>
+
+  <div class="flex flex-wrap">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
