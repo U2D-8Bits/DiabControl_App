@@ -43,7 +43,7 @@ a:hover{
 
   .card{
     width: auto;
-    border: 1px solid red;
+    margin: 0 10px;
   }
 
 }
