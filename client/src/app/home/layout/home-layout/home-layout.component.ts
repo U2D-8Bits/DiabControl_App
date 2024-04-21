@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 import { MenuItem } from 'primeng/api';
+import { BottomMenuComponent } from '../../components/bottom-menu/bottom-menu.component';
 
 
 
@@ -12,9 +14,9 @@ import { MenuItem } from 'primeng/api';
 export class HomeLayoutComponent implements OnInit {
 
 
-  userItems: MenuItem[] | undefined;
+  constructor(private _bottomSheet: MatBottomSheet) {}
 
-  // activeItem: MenuItem | undefined;
+  userItems: MenuItem[] | undefined;
 
   ngOnInit() {
 
@@ -23,7 +25,7 @@ export class HomeLayoutComponent implements OnInit {
       { label: 'Formulario', icon: 'pi pi-fw pi-clipboard', routerLink: '/home/forms',},
       { label: 'Informes',icon: 'pi pi-fw pi-book',routerLink: '/home/informs',},
       { label: 'Chats', icon: 'pi pi-fw pi-comments', routerLink: '/home/chats' },
-      { label: 'Acerca',icon: 'pi pi-fw pi-file',routerLink: '/home/education',},
+      { label: 'Acerca',icon: 'pi pi-fw pi-book',routerLink: '/home/education',},
       // {
       //   icon: 'pi pi-cog',
       //   items:[
@@ -34,6 +36,10 @@ export class HomeLayoutComponent implements OnInit {
     ]
 
 
+  }
+
+  openBottomSheet(): void {
+    this._bottomSheet.open(BottomMenuComponent);
   }
 
 }
