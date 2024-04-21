@@ -1,9 +1,19 @@
 <div class="body-controller">
-  <p-toolbar>
-    <img class="img-logo" src="../../../../assets/icons/DiabControl_Banner_white_200x50.svg" alt="">
-    <p-menubar [model]="userItems"></p-menubar>
-  </p-toolbar>
 
+  <!-- Header -->
+  <div id="div" class="flex justify-content-between align-items-center">
+
+    <div class="container-img">
+      <img class="img-logo" src="../../../../assets/icons/DiabControl_Banner_color_200x50.svg" alt="">
+    </div>
+
+    <div class="container-menu">
+      <p-tabMenu [model]="userItems"></p-tabMenu>
+    </div>
+
+  </div>
+
+  <!-- Main -->
   <div class="flex flex-wrap">
     <router-outlet></router-outlet>
   </div>
