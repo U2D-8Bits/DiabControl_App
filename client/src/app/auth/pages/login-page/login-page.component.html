@@ -1,1 +1,65 @@
-<p>login-page works!</p>
+<div
+  class="flex md: justify-content-around	align-items-center w-screen h-screen flex-wrap sm: justify-content-center align-items-center">
+
+  <div id="title-controller" class="md:w-6">
+
+    <div class="title-container">
+      <label class="diab" for="">Diab</label>
+      <label class="control" for="">Control</label>
+    </div>
+
+    <div>
+      <p class="text-justify">
+        DiabControl es tu compañero en el camino hacia un control óptimo de la diabetes. Nuestra plataforma te ofrece
+        una manera fácil y segura de llevar un seguimiento con tu médico especialista. Con características intuitivas y
+        herramientas personalizadas, estamos aquí para ayudarte a tomar el control de tu salud de manera asincrónica, en
+        cualquier momento y desde cualquier lugar.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="card">
+    <div class="card-header h-auto">
+      <h3>Iniciar Sesion</h3>
+    </div>
+    <div class="h-auto">
+      <form action="" class="w-full">
+        <p-inputGroup class=" col-12">
+          <p-inputGroupAddon>
+            <i class="pi pi-user"></i>
+          </p-inputGroupAddon>
+          <input pInputText placeholder="Usuario" />
+        </p-inputGroup>
+
+        <p-inputGroup class="col-12">
+          <p-inputGroupAddon>
+            <i class="pi pi-lock"></i>
+          </p-inputGroupAddon>
+          <input type="password" pInputText placeholder="Contraseña" />
+        </p-inputGroup>
+
+        <div class="w-full">
+
+          <div class="col flex justify-content-between flex-wrap">
+            <label for="">Olvidaste tu contraseña?</label>
+            <a routerLink="/auth/reset-password">recuperar contraseña</a>
+          </div>
+
+          <div class="col flex justify-content-between flex-wrap">
+            <label for="">Tu cuenta se encuentra bloqueada?</label>
+            <a routerLink="/auth/unblock-account">desbloquear cuenta</a>
+          </div>
+
+        </div>
+
+        <div class="w-full flex justify-content-center">
+          <p-button label="Ingresar"></p-button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+

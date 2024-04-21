@@ -1,0 +1,49 @@
+.card{
+  width: 500px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.card-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a{
+  text-decoration: none;
+  color: var(--blue-600);
+}
+
+a:hover{
+  color: var(--blue-900);
+}
+
+
+
+.title-container label{
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.diab{
+  color: var(--light-cyan-color);
+}
+
+.control{
+  color: var(--light-green-color);
+}
+
+
+@media screen and (max-width: 768px){
+
+  #title-controller{
+    display: none;
+  }
+
+  .card{
+    width: auto;
+    margin: 0 10px;
+  }
+
+}

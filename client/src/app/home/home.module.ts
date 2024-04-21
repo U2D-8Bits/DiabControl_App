@@ -9,6 +9,7 @@ import { SettingsPageComponent } from './pages/settings-page/settings-page.compo
 import { InfoPageComponent } from './pages/info-page/info-page.component';
 import { FormsPageComponent } from './pages/forms-page/forms-page.component';
 import { DocsPageComponent } from './pages/docs-page/docs-page.component';
+import { PrimengModule } from '../primeng/primeng.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DocsPageComponent } from './pages/docs-page/docs-page.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    PrimengModule
   ],
   exports: [
     HomeLayoutComponent,

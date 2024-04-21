@@ -6,6 +6,7 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { FormsPageComponent } from './pages/forms-page/forms-page.component';
 import { DocsPageComponent } from './pages/docs-page/docs-page.component';
 import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { InfoPageComponent } from './pages/info-page/info-page.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
       {path: 'chats', component: ChatPageComponent},
       {path: 'forms', component: FormsPageComponent},
       {path: 'informs', component: DocsPageComponent},
-      {path: 'MyProfile', component: SettingsPageComponent},
+      {path: 'education', component: InfoPageComponent},
+      {path: 'settings', component: SettingsPageComponent},
       {path: '', redirectTo: 'welcome', pathMatch: 'full'},
     ]
   }
