@@ -1,17 +1,24 @@
 <div class="body-controller">
 
-  <!-- Header -->
-  <div id="div" class="flex justify-content-between align-items-center">
+  <!-- Header web-->
+  <div id="div" class="flex sm:flex-column md:align-items-center ">
 
-    <div class="container-img">
+    <div class="container-img mt-2">
       <img class="img-logo" src="../../../../assets/icons/DiabControl_Banner_color_200x50.svg" alt="">
     </div>
 
     <div class="container-menu">
-      <p-tabMenu [model]="userItems"></p-tabMenu>
+      <p-tabMenu id="tabMenu" [model]="userItems"></p-tabMenu>
     </div>
 
   </div>
+
+
+  <!-- BottomMenu -->
+
+  <button id="bottomMenu" mat-icon-button (click)="openBottomSheet()">
+    <mat-icon>expand_less</mat-icon>
+  </button>
 
   <!-- Main -->
   <div class="flex flex-wrap">

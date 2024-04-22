@@ -11,8 +11,7 @@ import { FormsPageComponent } from './pages/forms-page/forms-page.component';
 import { DocsPageComponent } from './pages/docs-page/docs-page.component';
 import { PrimengModule } from '../primeng/primeng.module';
 import { MaterialModule } from '../material/material.module';
-import { BottomMenuComponent } from './components/bottom-menu/bottom-menu.component';
-
+import { MenuItem } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -23,14 +22,13 @@ import { BottomMenuComponent } from './components/bottom-menu/bottom-menu.compon
     InfoPageComponent,
     FormsPageComponent,
     DocsPageComponent,
-    BottomMenuComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
 
     PrimengModule,
-    MaterialModule
+    MaterialModule,
   ],
   exports: [
     HomeLayoutComponent,
@@ -40,7 +38,6 @@ import { BottomMenuComponent } from './components/bottom-menu/bottom-menu.compon
     InfoPageComponent,
     FormsPageComponent,
     DocsPageComponent,
-    BottomMenuComponent
   ]
 })
 export class HomeModule { }
