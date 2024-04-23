@@ -1,1 +1,33 @@
-<p>forms-page works!</p>
+<div class="form-controller">
+
+  <div class="flex align-items-center justify-content-between pl-3 pr-3">
+    <h4>Mis Formularios</h4>
+    <p-button label="Agregar Formulario" icon="pi pi-plus" routerLink="home/forms/create-form"></p-button>
+  </div>
+
+  <div class="card pl-3 pr-3">
+    <p-table [tableStyle]="{ 'min-width': '70rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>1</td>
+          <td>23 - 04 - 2024</td>
+          <td><p-tag severity="success" value="Enviado"></p-tag></td>
+          <td>
+            <p-button icon="pi pi-eye"></p-button>
+            <p-button icon="pi pi-pencil"></p-button>
+            <p-button icon="pi pi-trash"></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+</div>

@@ -34,7 +34,6 @@ a:hover{
   color: var(--light-green-color);
 }
 
-
 @media screen and (max-width: 768px){
 
   #title-controller{
