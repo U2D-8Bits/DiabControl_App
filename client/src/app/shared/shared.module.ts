@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
+import { PrimengModule } from '../primeng/primeng.module';
 
 
 
@@ -9,7 +10,8 @@ import { Error404PageComponent } from './pages/error404-page/error404-page.compo
     Error404PageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PrimengModule
   ]
 })
 export class SharedModule { }
