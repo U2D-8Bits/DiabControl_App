@@ -1,0 +1,154 @@
+{
+  "users":[
+    {
+      "id":1,
+      "username":"user01",
+      "password":"123456",
+      "name": "Pablo",
+      "lastname": "Bolanos",
+      "email": "u2d.8bits@gmail.com",
+      "phone": "0963662069",
+      "status": true,
+      "role": 1
+    },
+    {
+      "id":2,
+      "username":"user02",
+      "password":"123456",
+      "name": "Emilio",
+      "lastname": "David",
+      "email": "emilio@gmail.com",
+      "phone": "0985449090",
+      "status": true,
+      "role": 2
+    }
+  ],
+  "Forms":[
+    {
+      "id_form":1,
+      "id_user":2,
+      "name":"Formulario 1",
+      "description":"Formulario de prueba",
+      "fecha":"2021-06-01",
+      "status":true,
+      "questions":[
+        {
+          "id":1,
+          "question":"¿Que sintomas presenta?",
+          "type":"text",
+          "required":true
+        },
+        {
+          "id":2,
+          "question":"¿Cual es su nivel de glucosa?",
+          "type":"number",
+          "required":false
+        },
+        {
+          "id":3,
+          "question":"¿Cual es su peso?",
+          "type":"email",
+          "required":true
+        },
+        {
+          "id":4,
+          "question":"¿Com ha sido su alimentacion?",
+          "type":"tel",
+          "required":true
+        },
+        {
+          "id":5,
+          "question":"¿Ha realizado ejercicio?",
+          "type":"text",
+          "required":true
+        }
+      ]
+    },
+    {
+      "id_form":2,
+      "id_user":2,
+      "name":"Formulario 2",
+      "description":"Formulario de prueba",
+      "fecha":"2021-06-01",
+      "status":true,
+      "questions":[
+        {
+          "id":1,
+          "question":"¿Que sintomas presenta?",
+          "type":"text",
+          "required":true
+        },
+        {
+          "id":2,
+          "question":"¿Cual es su nivel de glucosa?",
+          "type":"number",
+          "required":false
+        },
+        {
+          "id":3,
+          "question":"¿Cual es su peso?",
+          "type":"email",
+          "required":true
+        },
+        {
+          "id":4,
+          "question":"¿Com ha sido su alimentacion?",
+          "type":"tel",
+          "required":true
+        },
+        {
+          "id":5,
+          "question":"¿Ha realizado ejercicio?",
+          "type":"text",
+          "required":true
+        }
+      ]
+    }
+  ],
+  "informs":[
+    {
+      "inform_id":1,
+      "user_id":1,
+      "answers":[
+        {
+          "question_id":1,
+          "answer":"Dolor de cabeza"
+        },
+        {
+          "question_id":2,
+          "answer":"120"
+        },
+        {
+          "question_id":3,
+          "answer":"70"
+        },
+        {
+          "question_id":4,
+          "answer":"Buena"
+        },
+        {
+          "question_id":5,
+          "answer":"Si"
+        }
+      ]
+    }
+  ],
+  "chat":[
+    {
+      "id":1,
+      "receptor":1,
+      "sender":2,
+      "message":"Hola como estas",
+      "fecha":"2021-06-01",
+      "status":false
+    },
+    {
+      "id":2,
+      "receptor":2,
+      "sender":1,
+      "message":"Bien y tu",
+      "fecha":"2021-06-01",
+      "status":false
+    }
+  ]
+}

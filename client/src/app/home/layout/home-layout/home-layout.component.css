@@ -20,10 +20,10 @@
 
 
   #bottomMenu{
-    display: block;
+    display: flex;
     position: absolute;
     left: 45%;
-    bottom: 3%;
+    top: 100%;
   }
 
   #div{
