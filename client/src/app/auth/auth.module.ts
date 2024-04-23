@@ -8,6 +8,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ResetPageComponent } from './pages/reset-page/reset-page.component';
 import { UnblockPageComponent } from './pages/unblock-page/unblock-page.component';
 import { PrimengModule } from '../primeng/primeng.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { PrimengModule } from '../primeng/primeng.module';
   imports: [
     CommonModule,
     AuthRoutingModule,
-
+    HttpClientModule,
     PrimengModule
   ],
   exports:[
