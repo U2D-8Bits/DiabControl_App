@@ -32,6 +32,17 @@
       "str_phone_user": "0985449090",
       "bool_status_user": true,
       "int_id_role": "2"
+    },
+    {
+      "int_id_user":3,
+      "str_username_user":"user03",
+      "str_password_user":"123456",
+      "str_name_user": "Juan",
+      "str_lastname_user": "Perez",
+      "str_email_user": "juan.perez@gmail.com",
+      "str_phone_user": "0985449090",
+      "bool_status_user": false,
+      "int_id_role": "2"
     }
   ],
   "Forms":[
