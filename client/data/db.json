@@ -1,0 +1,204 @@
+{
+
+  "role":[
+    {
+      "int_id_role":1,
+      "str_name_role":"Admin"
+    },
+    {
+      "int_id_role":2,
+      "str_name_role":"User"
+    }
+  ],
+  "users":[
+    {
+      "int_id_user":1,
+      "str_username_user":"user01",
+      "str_password_user":"123456",
+      "str_name_user": "Pablo",
+      "str_lastname_user": "Bolanos",
+      "str_email_user": "u2d.8bits@gmail.com",
+      "str_phone_user": "0963662069",
+      "bool_status_user": true,
+      "int_id_role": "1"
+    },
+    {
+      "int_id_user":2,
+      "str_username_user":"user02",
+      "str_password_user":"123456",
+      "str_name_user": "Emilio",
+      "str_lastname_user": "David",
+      "str_email_user": "emilio@gmail.com",
+      "str_phone_user": "0985449090",
+      "bool_status_user": true,
+      "int_id_role": "2"
+    }
+  ],
+  "Forms":[
+    {
+      "int_id_form":1,
+      "int_id_user":2,
+      "str_name_form":"Formulario 1",
+      "str_description_form":"Formulario de prueba",
+      "date_fecha_form":"2021-06-01",
+      "bool_status_form":true,
+      "str_questions_form":[
+        {
+          "id":1,
+          "question":"¿Que sintomas presenta?",
+          "type":"text",
+          "required":true
+        },
+        {
+          "id":2,
+          "question":"¿Cual es su nivel de glucosa?",
+          "type":"number",
+          "required":false
+        },
+        {
+          "id":3,
+          "question":"¿Cual es su peso?",
+          "type":"email",
+          "required":true
+        },
+        {
+          "id":4,
+          "question":"¿Com ha sido su alimentacion?",
+          "type":"tel",
+          "required":true
+        },
+        {
+          "id":5,
+          "question":"¿Ha realizado ejercicio?",
+          "type":"text",
+          "required":true
+        }
+      ]
+    },
+    {
+      "int_id_form":2,
+      "int_id_user":2,
+      "str_name_form":"Formulario 2",
+      "str_description_form":"Formulario de prueba 2",
+      "date_fecha_form":"2021-16-01",
+      "bool_status_form":true,
+      "str_questions_form":[
+        {
+          "id":1,
+          "question":"¿Que sintomas presenta?",
+          "type":"text",
+          "required":true
+        },
+        {
+          "id":2,
+          "question":"¿Cual es su nivel de glucosa?",
+          "type":"number",
+          "required":false
+        },
+        {
+          "id":3,
+          "question":"¿Cual es su peso?",
+          "type":"email",
+          "required":true
+        },
+        {
+          "id":4,
+          "question":"¿Com ha sido su alimentacion?",
+          "type":"tel",
+          "required":true
+        },
+        {
+          "id":5,
+          "question":"¿Ha realizado ejercicio?",
+          "type":"text",
+          "required":true
+        }
+      ]
+    }
+  ],
+  "informs":[
+    {
+      "int_id_inform":1,
+      "int_id_form":1,
+      "int_id_user":1,
+      "str_answers_form":[
+        {
+          "question_id":1,
+          "answer":"Dolor de cabeza"
+        },
+        {
+          "question_id":2,
+          "answer":"120"
+        },
+        {
+          "question_id":3,
+          "answer":"70"
+        },
+        {
+          "question_id":4,
+          "answer":"Buena"
+        },
+        {
+          "question_id":5,
+          "answer":"Si"
+        }
+      ]
+    }
+  ],
+  "chat":[
+    {
+      "int_id_chat":1,
+      "int_id_user":1,
+      "int_id_user2":2,
+      "str_messages":[
+        {
+          "int_id_message":1,
+          "int_id_user":1,
+          "str_message":"Hola"
+        },
+        {
+          "int_id_message":2,
+          "int_id_user":2,
+          "str_message":"Hola"
+        },
+        {
+          "int_id_message":3,
+          "int_id_user":1,
+          "str_message":"Como estas?"
+        },
+        {
+          "int_id_message":4,
+          "int_id_user":2,
+          "str_message":"Bien y tu?"
+        }
+      ]
+    },
+    {
+      "int_id_chat":2,
+      "int_id_user":1,
+      "int_id_user2":2,
+      "str_messages":[
+        {
+          "int_id_message":1,
+          "int_id_user":1,
+          "str_message":"Hola"
+        },
+        {
+          "int_id_message":2,
+          "int_id_user":2,
+          "str_message":"Hola"
+        },
+        {
+          "int_id_message":3,
+          "int_id_user":1,
+          "str_message":"Como estas?"
+        },
+        {
+          "int_id_message":4,
+          "int_id_user":2,
+          "str_message":"Bien y tu?"
+        }
+      ]
+    }
+  ]
+}

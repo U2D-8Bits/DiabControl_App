@@ -12,6 +12,7 @@ import { DocsPageComponent } from './pages/docs-page/docs-page.component';
 import { PrimengModule } from '../primeng/primeng.module';
 import { MaterialModule } from '../material/material.module';
 import { MenuItem } from 'primeng/api';
+import { CreateFormComponent } from './components/create-form/create-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MenuItem } from 'primeng/api';
     InfoPageComponent,
     FormsPageComponent,
     DocsPageComponent,
+    CreateFormComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +40,7 @@ import { MenuItem } from 'primeng/api';
     InfoPageComponent,
     FormsPageComponent,
     DocsPageComponent,
+    CreateFormComponent,
   ]
 })
 export class HomeModule { }

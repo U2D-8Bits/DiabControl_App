@@ -26,15 +26,8 @@ export class HomeLayoutComponent implements OnInit {
       { label: 'Informes',icon: 'pi pi-fw pi-book',routerLink: '/home/informs',},
       { label: 'Chats', icon: 'pi pi-fw pi-comments', routerLink: '/home/chats' },
       { label: 'Acerca',icon: 'pi pi-fw pi-book',routerLink: '/home/education',},
-      // {
-      //   icon: 'pi pi-cog',
-      //   items:[
-      //     {label: "Mi Cuenta", icon:'pi pi-id-card', routerLink: '/home/settings'},
-      //     {label: "Salir", icon:'pi pi-sign-out', routerLink:'/auth/'}
-      //   ]
-      // }
+      { label: 'Mi Cuenta', icon: 'pi pi-user', routerLink: '/home/settings'},
     ]
-
 
   }
 
