@@ -2,17 +2,17 @@
 
   "role":[
     {
-      "int_id_role":1,
+      "id":1,
       "str_name_role":"Admin"
     },
     {
-      "int_id_role":2,
+      "id":2,
       "str_name_role":"User"
     }
   ],
   "users":[
     {
-      "int_id_user":1,
+      "id":1,
       "str_username_user":"user01",
       "str_password_user":"123456",
       "str_name_user": "Pablo",
@@ -23,7 +23,7 @@
       "int_id_role": "1"
     },
     {
-      "int_id_user":2,
+      "id":2,
       "str_username_user":"user02",
       "str_password_user":"123456",
       "str_name_user": "Emilio",
@@ -34,7 +34,7 @@
       "int_id_role": "2"
     },
     {
-      "int_id_user":3,
+      "id":3,
       "str_username_user":"user03",
       "str_password_user":"123456",
       "str_name_user": "Juan",
@@ -47,7 +47,7 @@
   ],
   "Forms":[
     {
-      "int_id_form":1,
+      "id":1,
       "int_id_user":2,
       "str_name_form":"Formulario 1",
       "str_description_form":"Formulario de prueba",
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "int_id_form":2,
+      "id":2,
       "int_id_user":2,
       "str_name_form":"Formulario 2",
       "str_description_form":"Formulario de prueba 2",
@@ -129,7 +129,7 @@
   ],
   "informs":[
     {
-      "int_id_inform":1,
+      "id":1,
       "int_id_form":1,
       "int_id_user":1,
       "str_answers_form":[
@@ -158,7 +158,7 @@
   ],
   "chat":[
     {
-      "int_id_chat":1,
+      "id":1,
       "int_id_user":1,
       "int_id_user2":2,
       "str_messages":[
@@ -185,7 +185,7 @@
       ]
     },
     {
-      "int_id_chat":2,
+      "id":2,
       "int_id_user":1,
       "int_id_user2":2,
       "str_messages":[
