@@ -16,6 +16,7 @@ import { EditFormPageComponent } from './pages/edit-form-page/edit-form-page.com
 import { CreateFormPageComponent } from './pages/create-form-page/create-form-page.component';
 import { CreatePatientPageComponent } from './pages/create-patient-page/create-patient-page.component';
 import { EditPatientPageComponent } from './pages/edit-patient-page/edit-patient-page.component';
+import { PatientViewPageComponent } from './pages/patient-view-page/patient-view-page.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EditPatientPageComponent } from './pages/edit-patient-page/edit-patient
     CreateFormPageComponent,
     CreatePatientPageComponent,
     EditPatientPageComponent,
+    PatientViewPageComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +48,12 @@ import { EditPatientPageComponent } from './pages/edit-patient-page/edit-patient
     InfoPageComponent,
     FormsPageComponent,
     PatientsPageComponent,
+    EditFormPageComponent,
+    CreateFormPageComponent,
+    CreatePatientPageComponent,
+    EditPatientPageComponent,
+    PatientViewPageComponent,
+
   ]
 })
 export class HomeModule { }

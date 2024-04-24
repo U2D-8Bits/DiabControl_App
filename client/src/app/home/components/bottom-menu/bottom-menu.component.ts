@@ -22,11 +22,12 @@ export class BottomMenuComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { label: 'Inicio', icon: 'pi pi-fw pi-home', routerLink: '/home/welcome' },
-      { label: 'Formulario', icon: 'pi pi-fw pi-clipboard', routerLink: '/home/forms',},
-      { label: 'Informes',icon: 'pi pi-fw pi-book',routerLink: '/home/informs',},
+      { label: 'Inicio', icon: 'pi pi-fw pi-home', routerLink: '/home/bienvenido' },
+      { label: 'Formularios', icon: 'pi pi-fw pi-clipboard', routerLink: '/home/formularios',},
+      { label: 'Pacientes',icon: 'pi pi-fw pi-users',routerLink: '/home/pacientes',},
       { label: 'Chats', icon: 'pi pi-fw pi-comments', routerLink: '/home/chats' },
-      { label: 'Acerca',icon: 'pi pi-fw pi-book',routerLink: '/home/education',},
+      { label: 'Acerca',icon: 'pi pi-fw pi-book',routerLink: '/home/educacion',},
+      { label: 'Mi Cuenta', icon: 'pi pi-user', routerLink: '/home/ajustes'},
     ];
   }
 
