@@ -10,20 +10,13 @@ import { AuthUserService } from '../../../auth/services/user.service';
 export class SettingsPageComponent implements OnInit{
 
 
-  public users: User[] = [];
-  constructor( private userService: AuthUserService) { }
+  constructor() {}
 
   ngOnInit(): void {
-
-
-    this.userService.getUsers()
-    .subscribe( users => this.users = users)
 
   }
 
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
   }
 
 }

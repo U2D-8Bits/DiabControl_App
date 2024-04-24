@@ -9,14 +9,7 @@ import { ProductService } from '../../services/product.service';
 })
 export class FormsPageComponent implements OnInit{
 
-  // products!: Product[];
-
-  // constructor(public productService: ProductService) {}
-
   ngOnInit():void {
-      // this.productService.getProductsMini().then((data) => {
-      //     this.products = data;
-      // });
   }
 
 }

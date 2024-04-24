@@ -12,8 +12,13 @@ export class AuthUserService {
 
   private baseUrl: string = environments.baseUrl;
 
-  getUsers(): Observable<User[]>{
+  getAllUsers(): Observable<User[]>{
     return this.http.get<User[]>(`${this.baseUrl}/users`);
+  }
+
+  //Filtrar a los usuarios solo por el rol numero 2
+  getPatients(): Observable<User[]>{
+    return this.http.get<User[]>(`${this.baseUrl}/users?int_id_role=2`);
   }
 
 }
