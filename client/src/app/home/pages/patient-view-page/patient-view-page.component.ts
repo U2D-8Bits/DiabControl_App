@@ -14,6 +14,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
   providers: [ConfirmationService, MessageService],
 })
 export class PatientViewPageComponent implements OnInit {
+  // Variables
   public patient?: User;
   private id?: string;
   public editInfo: boolean = false;
@@ -99,6 +100,8 @@ export class PatientViewPageComponent implements OnInit {
           summary: 'Cancelado',
           detail: 'Edición Cancelada',
         });
+        // Incluimos el metodo reloadPage()
+        this.reloadPage();
       },
       reject: () => {
         this.messageService.add({
@@ -108,6 +111,15 @@ export class PatientViewPageComponent implements OnInit {
         });
       },
     });
+  }
+
+  // Metodo para recargar la paginación
+  reloadPage() {
+    let currentUrl = this.router.url;
+    console.log("UrlActual =>",currentUrl);
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([currentUrl]);
   }
 
   ngOnDestroy(): void {
