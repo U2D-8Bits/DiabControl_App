@@ -2,7 +2,7 @@
 
   <h3>Mis Pacientes</h3>
 
-  <p-button label="Registrar Paciente" icon="pi pi-plus"></p-button>
+  <p-button label="Registrar Paciente" icon="pi pi-plus" size="small" ></p-button>
 
 </div>
 
@@ -35,10 +35,10 @@
                 <p-tag severity="danger" value="Inactivo"></p-tag>
               </td>
               <td class="flex flex-wrap gap-1 ">
-                <p-button icon="pi pi-eye" [routerLink]="['/home/pacientes/', patients.id]" />
-                <p-button icon="pi pi-pencil" [routerLink]="['/home/pacientes/editar']" />
-                <p-button icon="pi pi-clipboard" />
-                <p-button icon="pi pi-sync" />
+                <p-button icon="pi pi-eye" size="small" [outlined]="true" [routerLink]="['/home/pacientes/', patients.id]" />
+                <p-button icon="pi pi-pencil" size="small" [outlined]="true" [routerLink]="['/home/pacientes/editar']" />
+                <p-button icon="pi pi-clipboard" size="small" [outlined]="true" />
+                <p-button icon="pi pi-sync" size="small" [outlined]="true" />
               </td>
 
           </tr>
