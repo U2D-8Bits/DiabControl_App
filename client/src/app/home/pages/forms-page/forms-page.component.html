@@ -1,11 +1,11 @@
-<div class="form-controller">
+<div class="form-controller p-3">
 
-  <div class="flex align-items-center justify-content-between pl-3 pr-3">
+  <div class="flex align-items-center justify-content-between">
     <h4>Mis Formularios</h4>
     <p-button label="Agregar Formulario" icon="pi pi-plus" routerLink="/home/formularios/crear"></p-button>
   </div>
 
-  <div class="card pl-3 pr-3">
+  <p-card class="">
     <p-table [tableStyle]="{ 'min-width': '70rem' }">
       <ng-template pTemplate="header">
         <tr>
@@ -28,7 +28,7 @@
         </tr>
       </ng-template>
     </p-table>
-  </div>
+  </p-card>
 
 </div>
 

@@ -56,9 +56,18 @@ export class PatientViewPageComponent implements OnInit {
     this.router.navigateByUrl('/home/pacientes');
   }
 
+  // Metodo para cambiar el estado de los inputs a Diasabled = False
+  enableInputs() {
+    const inputs = document.querySelectorAll('input[pInputText]');
+    inputs.forEach((input: Element) => {
+      (input as HTMLInputElement).disabled = false;
+    });
+  }
+
   //Metodo para editar el paciente
   editPatient() {
     this.boolInfo();
+    this.enableInputs();
   }
 
   // Metodo para cambiar el editInfo
