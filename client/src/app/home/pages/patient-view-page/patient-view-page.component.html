@@ -53,8 +53,10 @@
         </div>
 
         <div class="col-12 flex align-items-center justify-content-center gap-2" *ngIf="editInfo">
+          <p-toast></p-toast>
+          <p-confirmDialog></p-confirmDialog>
           <p-button label="Guardar" severity="secondary" [raised]="true" icon="pi pi-save" />
-          <p-button label="Cancelar" severity="danger" [raised]="true" icon="pi pi-times-circle" (onClick)="cancelEdit()" />
+          <p-button label="Cancelar" severity="danger" [raised]="true" icon="pi pi-times-circle" (onClick)="cancelEdit($event)" />
         </div>
 
       </form>
