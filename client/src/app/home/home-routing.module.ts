@@ -10,7 +10,6 @@ import { PatientsPageComponent } from './pages/patients-page/patients-page.compo
 import { EditFormPageComponent } from './pages/edit-form-page/edit-form-page.component';
 import { CreateFormPageComponent } from './pages/create-form-page/create-form-page.component';
 import { CreatePatientPageComponent } from './pages/create-patient-page/create-patient-page.component';
-import { EditPatientPageComponent } from './pages/edit-patient-page/edit-patient-page.component';
 import { PatientViewPageComponent } from './pages/patient-view-page/patient-view-page.component';
 
 const routes: Routes = [
@@ -33,9 +32,7 @@ const routes: Routes = [
       { path: 'pacientes', component: PatientsPageComponent },
       // Ruta para registrar un nuevo paciente
       { path: 'pacientes/registrar', component: CreatePatientPageComponent},
-      // Ruta para editar un paciente
-      { path: 'pacientes/editar', component: EditPatientPageComponent},
-      // Ruta para ver un paciente
+      // Ruta para ver & editar un paciente
       { path: 'pacientes/:id', component: PatientViewPageComponent},
       { path: '', redirectTo: 'bienvenido', pathMatch: 'full' },
     ],
