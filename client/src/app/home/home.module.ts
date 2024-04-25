@@ -18,6 +18,8 @@ import { CreatePatientPageComponent } from './pages/create-patient-page/create-p
 import { EditPatientPageComponent } from './pages/edit-patient-page/edit-patient-page.component';
 import { PatientViewPageComponent } from './pages/patient-view-page/patient-view-page.component';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     HomeLayoutComponent,
@@ -39,6 +41,7 @@ import { PatientViewPageComponent } from './pages/patient-view-page/patient-view
 
     PrimengModule,
     MaterialModule,
+    FormsModule,
   ],
   exports: [
     HomeLayoutComponent,

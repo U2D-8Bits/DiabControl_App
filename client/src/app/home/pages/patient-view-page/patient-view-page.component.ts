@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { AuthUserService } from '../../../auth/services/user.service';
 import { User } from '../../../auth/interfaces/user.interface';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -6,6 +6,8 @@ import { switchMap } from 'rxjs';
 
 import Swal from 'sweetalert2'
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { ReloadComponentService } from '../../services/reload-component.service';
+import { Button } from 'primeng/button';
 
 @Component({
   selector: 'app-patient-view-page',
@@ -14,20 +16,27 @@ import { ConfirmationService, MessageService } from 'primeng/api';
   providers: [ConfirmationService, MessageService],
 })
 export class PatientViewPageComponent implements OnInit {
+  // ViewChild
+  @ViewChild('editButton')  editButton!: Button;
+
+  // Variables
   public patient?: User;
-  private id?: string;
   public editInfo: boolean = false;
 
   constructor(
     private userService: AuthUserService,
     private activeRoute: ActivatedRoute,
     private router: Router,
+    private reloadService: ReloadComponentService,
 
     private messageService: MessageService,
     private confirmationService: ConfirmationService
   ) {}
 
   ngOnInit(): void {
+
+    console.log("NgOnInit PatientViewPageComponent Ready!");
+
     this.activeRoute.params
       .pipe(switchMap(({ id }) => this.userService.getUserById(id)))
       .subscribe((user) => {
@@ -38,6 +47,10 @@ export class PatientViewPageComponent implements OnInit {
       });
   }
 
+  ngAfterViewInit(): void {
+    console.log('AfterViewInit PatientViewPageComponent');
+  }
+
   // Metodo para regresar a /home/pacientes
   goBack() {
     this.router.navigateByUrl('/home/pacientes');
@@ -45,40 +58,13 @@ export class PatientViewPageComponent implements OnInit {
 
   //Metodo para editar el paciente
   editPatient() {
-    // Quitamos el [disabled]="true" a todos los p-button
-    const nameUser = document.getElementById('nameUser');
-    if (nameUser) nameUser.removeAttribute('disabled');
-    if (nameUser) nameUser.setAttribute('required', 'true');
-
-    const lastanameUser = document.getElementById('lastnameUser');
-    if (lastanameUser) lastanameUser.removeAttribute('disabled');
-    if (lastanameUser) lastanameUser.setAttribute('required', 'true');
-
-    const phoneUser = document.getElementById('phoneUser');
-    if (phoneUser) phoneUser.removeAttribute('disabled');
-    if (phoneUser) phoneUser.setAttribute('required', 'true');
-
-    const emailUser = document.getElementById('emailUser');
-    if (emailUser) emailUser.removeAttribute('disabled');
-    if (emailUser) emailUser.setAttribute('required', 'true');
-
-    const passwordUser = document.getElementById('passwordUser');
-    if (passwordUser) passwordUser.removeAttribute('disabled');
-    if (passwordUser) passwordUser.setAttribute('required', 'true');
-
-    const usernameUser = document.getElementById('usernameUser');
-    if (usernameUser) usernameUser.removeAttribute('disabled');
-    if (usernameUser) usernameUser.setAttribute('required', 'true');
-
-    // Modificamos el editInfo a True
     this.boolInfo();
   }
 
   // Metodo para cambiar el editInfo
   boolInfo(): void {
     this.editInfo = true;
-    const editButton = document.querySelector('#editButton');
-    if (editButton) editButton.setAttribute('disabled', 'true');
+    this.editButton.disabled = true;
   }
 
   // Metodo para cancelar la edit
@@ -99,6 +85,8 @@ export class PatientViewPageComponent implements OnInit {
           summary: 'Cancelado',
           detail: 'Edición Cancelada',
         });
+        // Incluimos el metodo reloadPage()
+        this.reloadService.reloadComponent();
       },
       reject: () => {
         this.messageService.add({
@@ -109,6 +97,7 @@ export class PatientViewPageComponent implements OnInit {
       },
     });
   }
+
 
   ngOnDestroy(): void {
     console.log('Destroying PatientViewPageComponent');

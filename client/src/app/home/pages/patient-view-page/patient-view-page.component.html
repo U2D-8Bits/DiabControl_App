@@ -2,7 +2,7 @@
 
   <div class="flex align-items-center justify-content-between">
     <h3> Información del Paciente </h3>
-    <p-button id="editButton" label="Regresar" icon="pi pi-arrow-left" (onClick)="goBack()" [disabled]="false" />
+    <p-button label="Regresar" icon="pi pi-arrow-left" size="small" (onClick)="goBack()" />
   </div>
 
   <p-card>
@@ -14,13 +14,13 @@
           Información General
         </h4>
 
-        <p-button label="Editar" icon="pi pi-pencil" (onClick)="editPatient()" />
+        <p-button #editButton label="Editar" icon="pi pi-pencil" size="small" (onClick)="editPatient()" [disabled]="false" />
 
       </div>
 
 
 
-      <form class="col-12 flex flex-wrap align-items-center flex-column sm:flex-row">
+      <form #formRef="ngForm" class="col-12 flex flex-wrap align-items-center flex-column sm:flex-row">
 
         <div class="col-12 flex flex-column gap-2 sm:col-6">
           <label for="name">Nombre</label>
@@ -29,7 +29,7 @@
 
         <div class="col-12 flex flex-column gap-2 sm:col-6">
           <label for="lastname">Apellido</label>
-          <input pInputText id="lastnameUser" aria-describedby="lastname-help" [value]="patient?.str_lastname_user" [disabled]="true" />
+          <input pInputText  id="lastnameUser" aria-describedby="lastname-help" [value]="patient?.str_lastname_user" [disabled]="true" />
         </div>
 
         <div class="col-12 flex flex-column gap-2 sm:col-6">
@@ -44,7 +44,7 @@
 
         <div class="col-12 flex flex-column gap-2 sm:col-6">
           <label for="username">Usuario</label>
-          <input pInputText id="usernameUser" aria-describedby="username-help" [value]="patient?.str_username_user" [disabled]="true" />
+          <input pInputText  id="usernameUser" aria-describedby="username-help" [value]="patient?.str_username_user" [disabled]="true" />
         </div>
 
         <div class="col-12 flex flex-column gap-2 sm:col-6">
