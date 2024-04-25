@@ -14,6 +14,9 @@ import { MenuItem } from 'primeng/api';
 import { PatientsPageComponent } from './pages/patients-page/patients-page.component';
 import { EditFormPageComponent } from './pages/edit-form-page/edit-form-page.component';
 import { CreateFormPageComponent } from './pages/create-form-page/create-form-page.component';
+import { CreatePatientPageComponent } from './pages/create-patient-page/create-patient-page.component';
+import { EditPatientPageComponent } from './pages/edit-patient-page/edit-patient-page.component';
+import { PatientViewPageComponent } from './pages/patient-view-page/patient-view-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { CreateFormPageComponent } from './pages/create-form-page/create-form-pa
     PatientsPageComponent,
     EditFormPageComponent,
     CreateFormPageComponent,
+    CreatePatientPageComponent,
+    EditPatientPageComponent,
+    PatientViewPageComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +48,12 @@ import { CreateFormPageComponent } from './pages/create-form-page/create-form-pa
     InfoPageComponent,
     FormsPageComponent,
     PatientsPageComponent,
+    EditFormPageComponent,
+    CreateFormPageComponent,
+    CreatePatientPageComponent,
+    EditPatientPageComponent,
+    PatientViewPageComponent,
+
   ]
 })
 export class HomeModule { }

@@ -21,7 +21,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-patients>
           <tr>
-              <td>{{ patients.int_id_user}}</td>
+              <td>{{ patients.id}}</td>
               <td>{{ patients.str_name_user }}</td>
               <td>{{ patients.str_lastname_user }}</td>
               <td>{{ patients.str_username_user}}</td>
@@ -35,8 +35,8 @@
                 <p-tag severity="danger" value="Inactivo"></p-tag>
               </td>
               <td class="flex flex-wrap gap-1 ">
-                <p-button icon="pi pi-eye" />
-                <p-button icon="pi pi-pencil" />
+                <p-button icon="pi pi-eye" [routerLink]="['/home/pacientes/', patients.id]" />
+                <p-button icon="pi pi-pencil" [routerLink]="['/home/pacientes/editar']" />
                 <p-button icon="pi pi-clipboard" />
                 <p-button icon="pi pi-sync" />
               </td>
