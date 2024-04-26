@@ -17,7 +17,7 @@ import { CreateFormPageComponent } from './pages/create-form-page/create-form-pa
 import { CreatePatientPageComponent } from './pages/create-patient-page/create-patient-page.component';
 import { PatientViewPageComponent } from './pages/patient-view-page/patient-view-page.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     PrimengModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HomeLayoutComponent,

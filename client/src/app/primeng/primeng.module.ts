@@ -36,6 +36,7 @@ import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
 import { ImageModule } from 'primeng/image';
 import { TagModule } from 'primeng/tag';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { TagModule } from 'primeng/tag';
     MessagesModule,
     ToastModule,
     ImageModule,
-    TagModule
+    TagModule,
+    DialogModule
   ]
 })
 export class PrimengModule { }
