@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { environments } from '../../../environments/environments';
 import { User } from '../interfaces/user.interface';
 
@@ -31,6 +31,27 @@ export class AuthUserService {
           return of (undefined);
         })
       )
+  }
+
+  // Crear un nuevo usuario
+  createUser(user: User): Observable<User>{
+    return this.http.post<User>(`${this.baseUrl}/users`, user);
+  }
+
+  // Actualizar un usuario
+  updateUser(user: User): Observable<User>{
+    if(!user.id) throw Error("User not found")
+    return this.http.patch<User>(`${this.baseUrl}/users/${user.id}`, user);
+  }
+
+  // Eliminar un usuario
+  deleteUser(id: string): Observable<boolean>{
+
+    return this.http.delete<User>(`${this.baseUrl}/users/${id}`)
+      .pipe(
+        catchError( error => of(false)),
+        map( resp => true)
+      );
   }
 
 }

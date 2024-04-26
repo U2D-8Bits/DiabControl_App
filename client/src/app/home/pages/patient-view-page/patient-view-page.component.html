@@ -1,21 +1,20 @@
 <div class="flex px-3 flex-column w-screen">
 
   <div class="flex align-items-center justify-content-between">
-    <h3> Información del Paciente </h3>
+    <h4> Información del Paciente </h4>
     <p-button label="Regresar" icon="pi pi-arrow-left" size="small" (onClick)="goBack()" />
   </div>
 
-  <p-card>
+  <p-card subheader="Informacion General">
 
     <div class="grid">
 
-      <div class="col-12 flex flex-wrap align-items-center justify-content-between flex-row">
-        <h4 class="">
+      <div class="col-12 flex flex-wrap align-items-center justify-content-end flex-row">
+        <!-- <h4 class="">
           Información General
-        </h4>
+        </h4> -->
 
         <p-button #editButton label="Editar" icon="pi pi-pencil" size="small" (onClick)="editPatient()" [disabled]="false" />
-
       </div>
 
 

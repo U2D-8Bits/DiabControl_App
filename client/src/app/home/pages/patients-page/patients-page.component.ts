@@ -12,6 +12,12 @@ export class PatientsPageComponent implements OnInit {
   public users: User[] = [];
   public patients: User[] = [];
 
+  visible: boolean = false;
+
+  showDialog() {
+      this.visible = true;
+  }
+
   constructor(private userService: AuthUserService) { }
 
   ngOnInit() {
