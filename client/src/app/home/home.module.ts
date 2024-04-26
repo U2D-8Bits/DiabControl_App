@@ -19,43 +19,53 @@ import { PatientViewPageComponent } from './pages/patient-view-page/patient-view
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePatientComponent } from './components/create-patient/create-patient.component';
 import { SharedModule } from '../shared/shared.module';
+import { ViewPatientComponent } from './components/view-patient/view-patient.component';
 
 @NgModule({
   declarations: [
     HomeLayoutComponent,
+    // Paginas
     WelcomePageComponent,
     ChatPageComponent,
     SettingsPageComponent,
     InfoPageComponent,
     FormsPageComponent,
     PatientsPageComponent,
+
+    // SubPaginas Componentes
     EditFormPageComponent,
     CreateFormPageComponent,
     PatientViewPageComponent,
     CreatePatientComponent,
+    ViewPatientComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule,
-
-    PrimengModule,
-    MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+
+    // Modulos Externos
+    SharedModule,
+    PrimengModule,
+    MaterialModule,
   ],
   exports: [
     HomeLayoutComponent,
+    // Paginas component
     WelcomePageComponent,
     ChatPageComponent,
     SettingsPageComponent,
     InfoPageComponent,
     FormsPageComponent,
     PatientsPageComponent,
+
+    // SubPaginas Componentes
     EditFormPageComponent,
     CreateFormPageComponent,
     PatientViewPageComponent,
     CreatePatientComponent,
+    ViewPatientComponent,
   ]
 })
 export class HomeModule { }
