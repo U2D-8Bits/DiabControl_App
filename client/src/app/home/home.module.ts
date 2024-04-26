@@ -18,6 +18,8 @@ import { CreatePatientPageComponent } from './pages/create-patient-page/create-p
 import { PatientViewPageComponent } from './pages/patient-view-page/patient-view-page.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreatePatientComponent } from './components/create-patient/create-patient.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,10 +34,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateFormPageComponent,
     CreatePatientPageComponent,
     PatientViewPageComponent,
+    CreatePatientComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    SharedModule,
 
     PrimengModule,
     MaterialModule,
@@ -54,7 +58,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateFormPageComponent,
     CreatePatientPageComponent,
     PatientViewPageComponent,
-
+    CreatePatientComponent,
   ]
 })
 export class HomeModule { }
