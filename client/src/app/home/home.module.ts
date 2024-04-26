@@ -14,10 +14,11 @@ import { MenuItem } from 'primeng/api';
 import { PatientsPageComponent } from './pages/patients-page/patients-page.component';
 import { EditFormPageComponent } from './pages/edit-form-page/edit-form-page.component';
 import { CreateFormPageComponent } from './pages/create-form-page/create-form-page.component';
-import { CreatePatientPageComponent } from './pages/create-patient-page/create-patient-page.component';
 import { PatientViewPageComponent } from './pages/patient-view-page/patient-view-page.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreatePatientComponent } from './components/create-patient/create-patient.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,16 +31,18 @@ import { FormsModule } from '@angular/forms';
     PatientsPageComponent,
     EditFormPageComponent,
     CreateFormPageComponent,
-    CreatePatientPageComponent,
     PatientViewPageComponent,
+    CreatePatientComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    SharedModule,
 
     PrimengModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HomeLayoutComponent,
@@ -51,9 +54,8 @@ import { FormsModule } from '@angular/forms';
     PatientsPageComponent,
     EditFormPageComponent,
     CreateFormPageComponent,
-    CreatePatientPageComponent,
     PatientViewPageComponent,
-
+    CreatePatientComponent,
   ]
 })
 export class HomeModule { }

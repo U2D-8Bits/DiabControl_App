@@ -2,9 +2,13 @@
 
   <div class="flex align-items-center justify-content-between">
     <h4>Mis Pacientes</h4>
-    <p-button label="Registrar Paciente" icon="pi pi-plus" size="small"
-      routerLink="/home/pacientes/registrar"></p-button>
+    <p-button label="Registrar Paciente" icon="pi pi-plus" (click)="showDialog()" size="small" />
   </div>
+
+  <p-dialog header="Registrar Paciente" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '65vh' }" [draggable]="false"
+    [resizable]="false">
+    <home-create-patient/>
+  </p-dialog>
 
   <p-card class="">
     <p-table [value]="patients" [tableStyle]="{ 'min-width': '50rem' }">
@@ -47,5 +51,3 @@
   </p-card>
 
 </div>
-
-

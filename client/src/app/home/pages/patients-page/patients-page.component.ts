@@ -12,7 +12,11 @@ export class PatientsPageComponent implements OnInit {
   public users: User[] = [];
   public patients: User[] = [];
 
-  constructor(private userService: AuthUserService) { }
+  visible: boolean = false;
+
+  constructor(
+    private userService: AuthUserService,
+  ) { }
 
   ngOnInit() {
 
@@ -29,6 +33,10 @@ export class PatientsPageComponent implements OnInit {
       console.log("Pacientes =>", patients);
     });
 
+  }
+
+  showDialog() {
+    this.visible = true;
   }
 
   ngOnDestroy(): void {

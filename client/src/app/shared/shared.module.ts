@@ -7,11 +7,13 @@ import { PrimengModule } from '../primeng/primeng.module';
 
 @NgModule({
   declarations: [
-    Error404PageComponent
+    Error404PageComponent,
   ],
   imports: [
     CommonModule,
     PrimengModule
+  ],
+  exports: [
   ]
 })
 export class SharedModule { }
