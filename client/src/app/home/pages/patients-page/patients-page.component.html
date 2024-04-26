@@ -5,9 +5,9 @@
     <p-button label="Registrar Paciente" icon="pi pi-plus" (click)="showDialog()" size="small" />
   </div>
 
-  <p-dialog header="Registrar Paciente" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+  <p-dialog header="Registrar Paciente" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '65vh' }" [draggable]="false"
     [resizable]="false">
-    <app-create-patient-page></app-create-patient-page>
+    <home-create-patient/>
   </p-dialog>
 
   <p-card class="">

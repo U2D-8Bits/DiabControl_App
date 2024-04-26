@@ -14,11 +14,9 @@ export class PatientsPageComponent implements OnInit {
 
   visible: boolean = false;
 
-  showDialog() {
-      this.visible = true;
-  }
-
-  constructor(private userService: AuthUserService) { }
+  constructor(
+    private userService: AuthUserService,
+  ) { }
 
   ngOnInit() {
 
@@ -35,6 +33,10 @@ export class PatientsPageComponent implements OnInit {
       console.log("Pacientes =>", patients);
     });
 
+  }
+
+  showDialog() {
+    this.visible = true;
   }
 
   ngOnDestroy(): void {
