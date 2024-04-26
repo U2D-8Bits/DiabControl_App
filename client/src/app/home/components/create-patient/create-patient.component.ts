@@ -32,7 +32,7 @@ export class CreatePatientComponent implements OnInit {
   });
 
   ngOnInit() {
-    console.log(`Se inicializó el componente ` + this.constructor.name);
+    console.log(`Se inicializó el componente ${this.constructor.name}` );
   }
 
   get currentPatient(): User {
@@ -120,6 +120,6 @@ export class CreatePatientComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    console.log(`Se destruyó el componente ` + this.constructor.name);
+    console.log(`Se destruyó el componente  ${this.constructor.name}`);
   }
 }
