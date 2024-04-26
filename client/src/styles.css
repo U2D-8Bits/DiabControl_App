@@ -22,8 +22,12 @@ body{
   box-sizing: border-box;
   overflow-x: hidden;
   background-color: #f8fafc;
+  position: relative;
 }
 
+h4{
+  color: #6b7280;
+}
 
 /* Global Styles */
 :root{
