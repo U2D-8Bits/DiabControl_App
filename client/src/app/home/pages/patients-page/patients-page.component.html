@@ -42,7 +42,7 @@
           <td class="flex flex-wrap gap-1 ">
             <p-button icon="pi pi-eye" size="small" [outlined]="true" (onClick)="sendUserID(patients.id)" (click)="showDialog('view', 'Ver Paciente')"/>
             <p-button icon="pi pi-clipboard" size="small" [outlined]="true" />
-            <p-button icon="pi pi-sync" size="small" [outlined]="true" />
+            <p-button icon="pi pi-sync" size="small" [outlined]="true" (onClick)="changeStatusUser(patients.id)" />
           </td>
 
         </tr>

@@ -120,6 +120,7 @@ export class ViewPatientComponent implements OnInit {
         this.myForm.disable();
         this.editButtonDisabled = false;
         console.log(`Valor de editButton disabled`, this.editButtonDisabled.valueOf());
+        this.ngOnDestroy();
       },
     });
 
