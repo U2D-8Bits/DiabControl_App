@@ -33,6 +33,8 @@ export class AuthUserService {
       )
   }
 
+  // ----------------------------------------------------------------
+
   // Crear un nuevo usuario
   createUser(user: User): Observable<User>{
     return this.http.post<User>(`${this.baseUrl}/users`, user);
@@ -41,7 +43,13 @@ export class AuthUserService {
   // Actualizar un usuario
   updateUser(user: User): Observable<User>{
     if(!user.id) throw Error("User not found")
-    return this.http.patch<User>(`${this.baseUrl}/users/${user.id}`, user);
+    return this.http.put<User>(`${this.baseUrl}/users/${user.id}`, user);
+  }
+
+  //Cambiar el estado de un usuario
+  changeStatusUser(user: User): Observable<User>{
+    if(!user.id) throw Error("User not found")
+    return this.http.put<User>(`${this.baseUrl}/users/${user.id}`, user);
   }
 
   // Eliminar un usuario

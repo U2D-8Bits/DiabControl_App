@@ -33,6 +33,12 @@ export class ViewPatientComponent implements OnInit {
   myForm!: FormGroup;
   editButtonDisabled: boolean = false;
 
+  get CurrentPatient(): User {
+    const currentPatient = this.myForm.value as User;
+    return currentPatient;
+  }
+
+
   ngOnInit(): void {
     console.log(`Se inicializó el componente ${this.constructor.name}`);
 
@@ -43,6 +49,7 @@ export class ViewPatientComponent implements OnInit {
     });
 
     this.myForm = this.fb.group({
+      id: [{value: ''}],
       str_username_user: [{ value: '', disabled: true }, Validators.required],
       str_password_user: [{ value: '', disabled: true }, [Validators.required, Validators.minLength(6)]],
       str_name_user: [{ value: '', disabled: true }, Validators.required],
@@ -94,6 +101,14 @@ export class ViewPatientComponent implements OnInit {
           summary: 'Guardado',
           detail: 'Cambios Guardados',
         });
+
+        console.log(`MyForm Value to Send => ${this.CurrentPatient}`)
+        this.AuthUserService.updateUser(this.CurrentPatient)
+        .subscribe((userUpdate) => {
+          console.log(`User Updated => ${userUpdate}`);
+          this.reloadService.reloadComponent();
+        });
+        this.myForm.disable();
       },
       reject: () => {
         this.messageService.add({
@@ -101,6 +116,10 @@ export class ViewPatientComponent implements OnInit {
           summary: 'Rechazado',
           detail: 'Cambios no guardados',
         });
+        this.editInfo = false;
+        this.myForm.disable();
+        this.editButtonDisabled = false;
+        console.log(`Valor de editButton disabled`, this.editButtonDisabled.valueOf());
       },
     });
 
@@ -125,14 +144,14 @@ export class ViewPatientComponent implements OnInit {
           detail: 'Edición Cancelada',
         });
         this.AuthUserService.getUserById(this.idPatient)
-        .pipe(delay(1000))
+        .pipe(delay(500))
         .subscribe((userRecive) => {
           if (userRecive) {
             this.myForm?.patchValue(userRecive);
           }
           this.editInfo = false;
           this.myForm.disable();
-          this.editButtonDisabled = true;
+          this.editButtonDisabled = false;
         });
 
       },
