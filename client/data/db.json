@@ -75,6 +75,17 @@
       "str_phone_user": "0983552626",
       "bool_status_user": true,
       "int_id_role": "2"
+    },
+    {
+      "id": "1abf",
+      "str_username_user": "Samy027",
+      "str_password_user": "amoaminovio",
+      "str_name_user": "Samantha",
+      "str_lastname_user": "Reyes",
+      "str_email_user": "sami@gmail.com",
+      "str_phone_user": "0993063595",
+      "bool_status_user": true,
+      "int_id_role": "2"
     }
   ],
   "Forms": [

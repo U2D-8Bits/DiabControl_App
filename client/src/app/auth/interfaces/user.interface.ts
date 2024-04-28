@@ -1,5 +1,5 @@
 export interface User {
-  id:                number;
+  id:                string;
   str_username_user: string;
   str_password_user: string;
   str_name_user:     string;
