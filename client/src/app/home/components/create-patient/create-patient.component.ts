@@ -12,6 +12,7 @@ import { User } from '../../../auth/interfaces/user.interface';
   providers: [ConfirmationService, MessageService],
 })
 export class CreatePatientComponent implements OnInit {
+
   constructor(
     private fb: FormBuilder,
     private confirmationService: ConfirmationService,

@@ -1,0 +1,11 @@
+::ng-deep p-inputmask input {
+  width: 100% !important;
+}
+
+::ng-deep p-password div, p-password input {
+  width: 100% !important;
+}
+
+::ng-deep p-password div input {
+  width: 100% !important;
+}

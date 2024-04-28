@@ -26,7 +26,7 @@
       "str_username_user": "user02",
       "str_password_user": "123456",
       "str_name_user": "Emilio",
-      "str_lastname_user": "David",
+      "str_lastname_user": "Bolanos",
       "str_email_user": "emilio@gmail.com",
       "str_phone_user": "0985449090",
       "bool_status_user": true,
@@ -73,6 +73,17 @@
       "str_lastname_user": "Bolanos",
       "str_email_user": "david@gmail.com",
       "str_phone_user": "0983552626",
+      "bool_status_user": true,
+      "int_id_role": "2"
+    },
+    {
+      "id": "1abf",
+      "str_username_user": "Samy027",
+      "str_password_user": "amoaminovio",
+      "str_name_user": "Samantha",
+      "str_lastname_user": "Reyes",
+      "str_email_user": "sami@gmail.com",
+      "str_phone_user": "0993063595",
       "bool_status_user": true,
       "int_id_role": "2"
     }
