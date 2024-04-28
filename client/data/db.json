@@ -51,7 +51,7 @@
       "str_lastname_user": "Bolanos",
       "str_email_user": "izra047@gmail.com",
       "str_phone_user": "0963662069",
-      "bool_status_user": true,
+      "bool_status_user": false,
       "int_id_role": "2"
     },
     {

@@ -49,6 +49,25 @@ export class PatientsPageComponent implements OnInit {
     console.log("Valor de ID obtenido =>", id);
   }
 
+  changeStatusUser(id: string) {
+
+    console.log("Valor de ID obtenido =>", id);
+
+    this.userService.getUserById(id)
+    .subscribe( user => {
+      console.log(`UserData Recive =>`, user);
+      const statusChanged = user?.bool_status_user ? false : true;
+
+      this.userService.changeStatusUser(id, statusChanged)
+        .subscribe( user => {
+          console.log(`Status Changed =>`, user);
+          this.ngOnInit();
+        })
+    })
+
+
+  }
+
 
   ngOnDestroy(): void {
     this.dialogComponentSubscription?.unsubscribe();

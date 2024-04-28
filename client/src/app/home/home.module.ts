@@ -14,7 +14,6 @@ import { MenuItem } from 'primeng/api';
 import { PatientsPageComponent } from './pages/patients-page/patients-page.component';
 import { EditFormPageComponent } from './pages/edit-form-page/edit-form-page.component';
 import { CreateFormPageComponent } from './pages/create-form-page/create-form-page.component';
-import { PatientViewPageComponent } from './pages/patient-view-page/patient-view-page.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePatientComponent } from './components/create-patient/create-patient.component';
@@ -35,7 +34,6 @@ import { ViewPatientComponent } from './components/view-patient/view-patient.com
     // SubPaginas Componentes
     EditFormPageComponent,
     CreateFormPageComponent,
-    PatientViewPageComponent,
     CreatePatientComponent,
     ViewPatientComponent,
   ],
@@ -63,7 +61,6 @@ import { ViewPatientComponent } from './components/view-patient/view-patient.com
     // SubPaginas Componentes
     EditFormPageComponent,
     CreateFormPageComponent,
-    PatientViewPageComponent,
     CreatePatientComponent,
     ViewPatientComponent,
   ]

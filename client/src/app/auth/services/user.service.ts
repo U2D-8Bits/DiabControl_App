@@ -46,10 +46,11 @@ export class AuthUserService {
     return this.http.put<User>(`${this.baseUrl}/users/${user.id}`, user);
   }
 
-  //Cambiar el estado de un usuario
-  changeStatusUser(user: User): Observable<User>{
-    if(!user.id) throw Error("User not found")
-    return this.http.put<User>(`${this.baseUrl}/users/${user.id}`, user);
+  //Cambiar el status de un usuario
+  changeStatusUser(id:string, status:boolean): Observable<User>{
+    if(id === '' || id === null) throw Error("User not found");
+    if(status === null) throw Error("Status not found");
+    return this.http.patch<User>(`${this.baseUrl}/users/${id}`, {bool_status_user: status});
   }
 
   // Eliminar un usuario
