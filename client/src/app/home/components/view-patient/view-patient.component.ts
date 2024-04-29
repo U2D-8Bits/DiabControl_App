@@ -109,6 +109,8 @@ export class ViewPatientComponent implements OnInit {
           this.reloadService.reloadComponent();
         });
         this.myForm.disable();
+        this.editInfo = false;
+        this.editButtonDisabled = false;
       },
       reject: () => {
         this.messageService.add({

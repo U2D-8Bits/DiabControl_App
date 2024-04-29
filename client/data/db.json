@@ -22,39 +22,6 @@
       "int_id_role": "1"
     },
     {
-      "id": "2",
-      "str_username_user": "user02",
-      "str_password_user": "123456",
-      "str_name_user": "Emilio",
-      "str_lastname_user": "Bolanos",
-      "str_email_user": "emilio@gmail.com",
-      "str_phone_user": "0985449090",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "3",
-      "str_username_user": "user03",
-      "str_password_user": "123456",
-      "str_name_user": "Juan",
-      "str_lastname_user": "Perez",
-      "str_email_user": "juan.perez@gmail.com",
-      "str_phone_user": "0985449090",
-      "bool_status_user": false,
-      "int_id_role": "2"
-    },
-    {
-      "id": "4",
-      "str_username_user": "Izra047",
-      "str_password_user": "Lolxdxd12@",
-      "str_name_user": "Israel",
-      "str_lastname_user": "Bolanos",
-      "str_email_user": "izra047@gmail.com",
-      "str_phone_user": "0963662069",
-      "bool_status_user": false,
-      "int_id_role": "2"
-    },
-    {
       "id": "eb6d",
       "str_username_user": "Santiaguex777",
       "str_password_user": "Lolito12",
@@ -84,6 +51,28 @@
       "str_lastname_user": "Reyes",
       "str_email_user": "sami@gmail.com",
       "str_phone_user": "0993063595",
+      "bool_status_user": true,
+      "int_id_role": "2"
+    },
+    {
+      "id": "cb27",
+      "str_username_user": "PepitoCamelo",
+      "str_password_user": "123456",
+      "str_name_user": "Pepito",
+      "str_lastname_user": "Juarez",
+      "str_email_user": "pepitocamelo@gmail.com",
+      "str_phone_user": "3847194385",
+      "bool_status_user": true,
+      "int_id_role": "2"
+    },
+    {
+      "id": "e043",
+      "str_username_user": "AlbetoXD",
+      "str_password_user": "123456",
+      "str_name_user": "Alberto",
+      "str_lastname_user": "Morocho",
+      "str_email_user": "albertino@gmail.com",
+      "str_phone_user": "1234567890",
       "bool_status_user": true,
       "int_id_role": "2"
     }

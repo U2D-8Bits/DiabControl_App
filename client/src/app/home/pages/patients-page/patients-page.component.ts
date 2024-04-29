@@ -4,10 +4,15 @@ import { User } from '../../../auth/interfaces/user.interface';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { UserDataService } from '../../services/user-data.service';
 
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { CreatePatientComponent } from '../../components/create-patient/create-patient.component';
+import { ViewPatientComponent } from '../../components/view-patient/view-patient.component';
+
 @Component({
   selector: 'app-patients-page',
   templateUrl: './patients-page.component.html',
   styleUrls: ['./patients-page.component.css'],
+  providers: [DialogService],
 })
 export class PatientsPageComponent implements OnInit {
 
@@ -18,12 +23,14 @@ export class PatientsPageComponent implements OnInit {
   dialogHeader: string = '';
 
   private dialogComponentSubscription?: Subscription;
-  // public create: string = "home-create-patient";
 
   constructor(
     private userService: AuthUserService,
     private userDataService: UserDataService,
+    public dialogService: DialogService,
   ) {}
+
+  ref: DynamicDialogRef | undefined;
 
   ngOnInit() {
 
@@ -39,20 +46,28 @@ export class PatientsPageComponent implements OnInit {
   }
 
   showDialog(componentName: string, headerText: string){
-    this.dialogComponent = componentName; // Asigna el nombre del componente que se debe mostrar
-    this.dialogHeader = headerText;
-    this.visible = true; // Muestra el diálogo
+    if(componentName === 'create'){
+      this.ref = this.dialogService.open(CreatePatientComponent, {
+        header: headerText,
+        width: '70%',
+        contentStyle: {"max-height": "500px", "overflow": "auto"},
+      });
+    }
+
+    if(componentName === 'view'){
+      this.ref = this.dialogService.open(ViewPatientComponent, {
+        header: headerText,
+        width: '70%',
+        contentStyle: {"max-height": "500px", "overflow": "auto"},
+      });
+    }
   }
 
   sendUserID(id:number){
     this.userDataService.changeUserId(id);
-    console.log("Valor de ID obtenido =>", id);
   }
 
   changeStatusUser(id: string) {
-
-    console.log("Valor de ID obtenido =>", id);
-
     this.userService.getUserById(id)
     .subscribe( user => {
       console.log(`UserData Recive =>`, user);
@@ -64,8 +79,15 @@ export class PatientsPageComponent implements OnInit {
           this.ngOnInit();
         })
     })
+  }
 
+  deleteUser(id: string): void {
 
+    this.userService.deleteUser(id)
+      .subscribe( user => {
+        console.log(`User Deleted =>`, user);
+        this.ngOnInit();
+      });
   }
 
 
