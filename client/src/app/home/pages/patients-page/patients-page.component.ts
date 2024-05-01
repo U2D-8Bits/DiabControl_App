@@ -23,14 +23,14 @@ export class PatientsPageComponent implements OnInit {
   dialogHeader: string = '';
 
   private dialogComponentSubscription?: Subscription;
+  ref: DynamicDialogRef | undefined;
+
 
   constructor(
     private userService: AuthUserService,
     private userDataService: UserDataService,
     public dialogService: DialogService,
   ) {}
-
-  ref: DynamicDialogRef | undefined;
 
   ngOnInit() {
 
