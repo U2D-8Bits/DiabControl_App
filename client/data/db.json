@@ -22,28 +22,6 @@
       "int_id_role": "1"
     },
     {
-      "id": "eb6d",
-      "str_username_user": "Santiaguex777",
-      "str_password_user": "Lolito12",
-      "str_name_user": "Santiago",
-      "str_lastname_user": "Garcia",
-      "str_email_user": "Santigo@gmail.com",
-      "str_phone_user": "0945276242",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "8e33",
-      "str_username_user": "XXXTentallout",
-      "str_password_user": "123456",
-      "str_name_user": "David",
-      "str_lastname_user": "Bolanos",
-      "str_email_user": "david@gmail.com",
-      "str_phone_user": "0983552626",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
       "id": "1abf",
       "str_username_user": "Samy027",
       "str_password_user": "amoaminovio",
@@ -73,6 +51,17 @@
       "str_lastname_user": "Morocho",
       "str_email_user": "albertino@gmail.com",
       "str_phone_user": "1234567890",
+      "bool_status_user": true,
+      "int_id_role": "2"
+    },
+    {
+      "id": "eb1b",
+      "str_username_user": "Isra047",
+      "str_password_user": "Lolxdxd12",
+      "str_name_user": "Pablo",
+      "str_lastname_user": "Bolanos",
+      "str_email_user": "pablo@gmail.com",
+      "str_phone_user": "0963662069",
       "bool_status_user": true,
       "int_id_role": "2"
     }
