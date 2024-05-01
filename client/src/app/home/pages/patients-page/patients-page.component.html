@@ -1,15 +1,10 @@
 <div class="w-screen h-full p-3">
-
+  <p-toast></p-toast>
+  <p-confirmDialog></p-confirmDialog>
   <div class="flex align-items-center justify-content-between">
     <h4>Mis Pacientes</h4>
     <p-button label="Registrar Paciente" icon="pi pi-plus" (click)="showDialog('create', 'Registrar Paciente')" size="small" />
   </div>
-
-  <!-- <p-dialog [header]="dialogHeader" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '65vh' }"
-    [draggable]="false" [resizable]="false">
-    <home-create-patient *ngIf="dialogComponent === 'create'" />
-    <home-view-patient *ngIf="dialogComponent === 'view'" />
-  </p-dialog> -->
 
   <p-card class="">
     <p-table [value]="patients" [tableStyle]="{ 'min-width': '50rem' }">
@@ -42,8 +37,8 @@
           <td class="flex flex-wrap gap-1 ">
             <p-button icon="pi pi-eye" size="small" [outlined]="true" (onClick)="sendUserID(patients.id)" (click)="showDialog('view', 'Ver Paciente')"/>
             <p-button icon="pi pi-clipboard" size="small" [outlined]="true" />
-            <p-button icon="pi pi-sync" size="small" [outlined]="true" (onClick)="changeStatusUser(patients.id)" />
-            <p-button icon="pi pi-trash" size="small" [outlined]="true" (onClick)="deleteUser(patients.id)" />
+            <p-button icon="pi pi-sync" size="small" [outlined]="true" (onClick)="changeStatusUser(patients.id, $event)" />
+            <p-button icon="pi pi-trash" size="small" [outlined]="true" (onClick)="deleteUser(patients.id, $event)" />
           </td>
         </tr>
       </ng-template>
