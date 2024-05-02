@@ -20,6 +20,17 @@
       "str_phone_user": "0963662069",
       "bool_status_user": true,
       "int_id_role": "1"
+    },
+    {
+      "id": "b49f",
+      "str_username_user": "SamantaReyes",
+      "str_password_user": "123456",
+      "str_name_user": "Samantha Valeria",
+      "str_lastname_user": "Reyes Guanoquiza",
+      "str_email_user": "sami.reyes@gmail.com",
+      "str_phone_user": "0986332090",
+      "bool_status_user": true,
+      "int_id_role": "2"
     }
   ],
   "Forms": [
