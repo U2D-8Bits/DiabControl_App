@@ -6,8 +6,13 @@
     <p-button label="Registrar Paciente" icon="pi pi-plus" (click)="showDialog('create', 'Registrar Paciente')" size="small" />
   </div>
 
-  <p-card class="">
-    <p-table [value]="patients" [tableStyle]="{ 'min-width': '50rem' }">
+  <p-card class="" >
+
+    <div class="flex align-items-center justify-content-center" *ngIf="patients.length == 0">
+      <label for="">No hay pacientes registrados</label>
+    </div>
+
+    <p-table *ngIf="patients.length != 0" [value]="patients" [tableStyle]="{ 'min-width': '50rem' }">
       <ng-template pTemplate="header">
         <tr>
           <th>Codigo</th>
