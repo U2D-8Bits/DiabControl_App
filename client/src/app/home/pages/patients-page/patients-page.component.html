@@ -41,7 +41,7 @@
           </td>
           <td class="flex flex-wrap gap-1 ">
             <p-button icon="pi pi-eye" size="small" [outlined]="true" (onClick)="sendUserID(patients.id)" (click)="showDialog('view', 'Ver Paciente')"/>
-            <p-button icon="pi pi-clipboard" size="small" [outlined]="true" />
+            <p-button icon="pi pi-clipboard" [routerLink]="['/home/informes/', patients.id]" size="small" [outlined]="true" />
             <p-button icon="pi pi-sync" size="small" [outlined]="true" (onClick)="changeStatusUser(patients.id, $event)" />
             <p-button icon="pi pi-trash" size="small" [outlined]="true" (onClick)="deleteUser(patients.id, $event)" />
           </td>

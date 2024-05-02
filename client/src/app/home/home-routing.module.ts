@@ -8,6 +8,7 @@ import { SettingsPageComponent } from './pages/settings-page/settings-page.compo
 import { PatientsPageComponent } from './pages/patients-page/patients-page.component';
 import { EditFormPageComponent } from './pages/edit-form-page/edit-form-page.component';
 import { CreateFormPageComponent } from './pages/create-form-page/create-form-page.component';
+import { InformPageComponent } from './pages/inform-page/inform-page.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,9 @@ const routes: Routes = [
       { path: 'formularios/editar/:id', component: EditFormPageComponent},
       // Ruta para ver un formulario
       { path: 'formularios/:id', component: EditFormPageComponent},
-      // Ruta para ver los pacientes
+      // Ruta para ver los informes
+      { path: 'informes/:id', component: InformPageComponent},
+      // Ruta para Ver los pacientes
       { path: 'pacientes', component: PatientsPageComponent },
       { path: '', redirectTo: 'bienvenido', pathMatch: 'full' },
     ],
