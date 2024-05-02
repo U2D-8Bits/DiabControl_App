@@ -1,1 +1,1 @@
-MEDSYNCAPP
+`DiabControl App`
