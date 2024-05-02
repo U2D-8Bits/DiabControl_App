@@ -22,68 +22,13 @@
       "int_id_role": "1"
     },
     {
-      "id": "2",
-      "str_username_user": "user02",
+      "id": "b49f",
+      "str_username_user": "SamantaReyes",
       "str_password_user": "123456",
-      "str_name_user": "Emilio",
-      "str_lastname_user": "Bolanos",
-      "str_email_user": "emilio@gmail.com",
-      "str_phone_user": "0985449090",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "3",
-      "str_username_user": "user03",
-      "str_password_user": "123456",
-      "str_name_user": "Juan",
-      "str_lastname_user": "Perez",
-      "str_email_user": "juan.perez@gmail.com",
-      "str_phone_user": "0985449090",
-      "bool_status_user": false,
-      "int_id_role": "2"
-    },
-    {
-      "id": "4",
-      "str_username_user": "Izra047",
-      "str_password_user": "Lolxdxd12@",
-      "str_name_user": "Israel",
-      "str_lastname_user": "Bolanos",
-      "str_email_user": "izra047@gmail.com",
-      "str_phone_user": "0963662069",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "eb6d",
-      "str_username_user": "Santiaguex777",
-      "str_password_user": "Lolito12",
-      "str_name_user": "Santiago",
-      "str_lastname_user": "Garcia",
-      "str_email_user": "Santigo@gmail.com",
-      "str_phone_user": "0945276242",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "8e33",
-      "str_username_user": "XXXTentallout",
-      "str_password_user": "123456",
-      "str_name_user": "David",
-      "str_lastname_user": "Bolanos",
-      "str_email_user": "david@gmail.com",
-      "str_phone_user": "0983552626",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "1abf",
-      "str_username_user": "Samy027",
-      "str_password_user": "amoaminovio",
-      "str_name_user": "Samantha",
-      "str_lastname_user": "Reyes",
-      "str_email_user": "sami@gmail.com",
-      "str_phone_user": "0993063595",
+      "str_name_user": "Samantha Valeria",
+      "str_lastname_user": "Reyes Guanoquiza",
+      "str_email_user": "sami.reyes@gmail.com",
+      "str_phone_user": "0986332090",
       "bool_status_user": true,
       "int_id_role": "2"
     }

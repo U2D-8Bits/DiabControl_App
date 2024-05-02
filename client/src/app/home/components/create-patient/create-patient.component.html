@@ -35,7 +35,7 @@
     <p-confirmDialog></p-confirmDialog>
 
     <p-button label="Guardar" (onClick)="savePatient($event)" icon="pi pi-save" size="small" severity="secondary" [disabled]="myForm.invalid" />
-    <p-button label="Cancelar" (onClick)="cancelAction($event)" icon="pi pi-times-circle" size="small" severity="danger" />
+    <p-button label="Cancelar" (onClick)="cancelAction($event)" icon="pi pi-times-circle" size="small" severity="danger" [disabled]="myForm.invalid" />
   </div>
 
 </form>

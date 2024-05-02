@@ -109,6 +109,8 @@ export class ViewPatientComponent implements OnInit {
           this.reloadService.reloadComponent();
         });
         this.myForm.disable();
+        this.editInfo = false;
+        this.editButtonDisabled = false;
       },
       reject: () => {
         this.messageService.add({
@@ -120,6 +122,7 @@ export class ViewPatientComponent implements OnInit {
         this.myForm.disable();
         this.editButtonDisabled = false;
         console.log(`Valor de editButton disabled`, this.editButtonDisabled.valueOf());
+        this.ngOnDestroy();
       },
     });
 

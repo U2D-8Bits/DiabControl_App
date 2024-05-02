@@ -5,11 +5,13 @@ import { ReloadComponentService } from '../../services/reload-component.service'
 import { AuthUserService } from '../../../auth/services/user.service';
 import { User } from '../../../auth/interfaces/user.interface';
 
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+
 @Component({
   selector: 'home-create-patient',
   templateUrl: './create-patient.component.html',
   styleUrl: './create-patient.component.css',
-  providers: [ConfirmationService, MessageService],
+  providers: [ConfirmationService, MessageService, DialogService],
 })
 export class CreatePatientComponent implements OnInit {
 
@@ -20,6 +22,8 @@ export class CreatePatientComponent implements OnInit {
     private reloadService: ReloadComponentService,
     private userService: AuthUserService
   ) {}
+
+  cancelAble: Boolean = true;
 
   myForm = this.fb.group({
     str_username_user: ['', Validators.required],
@@ -34,6 +38,7 @@ export class CreatePatientComponent implements OnInit {
 
   ngOnInit() {
     console.log(`Se inicializó el componente ${this.constructor.name}` );
+    console.log(`Propiedades de myForm =>`, this.myForm )
   }
 
   get currentPatient(): User {
@@ -108,6 +113,8 @@ export class CreatePatientComponent implements OnInit {
           life: 1500,
         });
         this.reloadService.reloadComponent();
+        // Limpiamos el formulario
+        this.myForm.reset();
       },
       reject: () => {
         this.messageService.add({

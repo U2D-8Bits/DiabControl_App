@@ -25,7 +25,6 @@ export class HomeLayoutComponent implements OnInit {
       { label: 'Formularios', icon: 'pi pi-fw pi-clipboard', routerLink: '/home/formularios',},
       { label: 'Pacientes',icon: 'pi pi-fw pi-users',routerLink: '/home/pacientes',},
       { label: 'Chats', icon: 'pi pi-fw pi-comments', routerLink: '/home/chats' },
-      { label: 'Acerca',icon: 'pi pi-fw pi-book',routerLink: '/home/educacion',},
       { label: 'Mi Cuenta', icon: 'pi pi-user', routerLink: '/home/ajustes'},
     ]
 
