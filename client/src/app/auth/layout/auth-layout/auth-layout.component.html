@@ -1,10 +1,25 @@
+<!-- <div class="w-screen h-screen">
+  <p-toolbar>
+    <img class="img-logo" src="../../../../assets/icons/DiabControl_Banner_white_200x50.svg" alt="">
+  </p-toolbar>
 
-<p-toolbar>
-  <img class="img-logo" src="../../../../assets/icons/DiabControl_Banner_white_200x50.svg" alt="">
-</p-toolbar>
 
-<div class="main-controller">
-  <router-outlet></router-outlet>
+  <div class="">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+<div class="w-screen h-screen">
+
+  <div id="header" class="surface-section px-4 py-5 md:px-6 lg:px-4">
+    <div class="flex align-items-start flex-column lg:justify-content-between lg:flex-row">
+      <div>
+        <img class="img-logo" src="../../../../assets/icons/DiabControl_Banner_white_200x50.svg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <router-outlet/>
+  </div>
 </div>
-
 

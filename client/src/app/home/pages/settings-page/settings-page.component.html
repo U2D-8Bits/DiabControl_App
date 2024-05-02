@@ -1,2 +1,92 @@
-<p>settings-page works!</p>
+<div class="flex flex-column w-screen p-3">
 
+  <div class="flex flex-column mb-3 md:flex-row align-items-center justify-content-between">
+    <h4>Mi Cuenta</h4>
+    <p-button class="" label="Cerrar Sesión" icon="pi pi-sign-out" size="small" />
+  </div>
+
+  <div class="flex">
+
+    <p-card class="w-full">
+
+      <div class="flex flex-column md:flex-row align-items-center justify-content-between">
+
+        <h2>Información General</h2>
+        <p-button icon="pi pi-cog" class="w-full mb-3 md:w-auto" size="small" />
+
+      </div>
+
+      <form class="flex flex-wrap gap-4">
+
+        <div class="input-controller">
+          <label for="">Nombre</label>
+          <p-inputGroup>
+            <p-inputGroupAddon>
+              <i class="pi pi-id-card"></i>
+            </p-inputGroupAddon>
+            <input pInputText placeholder="Username" />
+          </p-inputGroup>
+        </div>
+
+        <div class="input-controller">
+          <label for="">Apellido</label>
+          <p-inputGroup>
+            <p-inputGroupAddon>
+              <i class="pi pi-id-card"></i>
+            </p-inputGroupAddon>
+            <input pInputText placeholder="Apellido" />
+          </p-inputGroup>
+        </div>
+
+        <div class="input-controller">
+          <label for="">Teléfono</label>
+          <p-inputGroup>
+            <p-inputGroupAddon>
+              <i class="pi pi-phone"></i>
+            </p-inputGroupAddon>
+            <input pInputText placeholder="Teléfono" />
+          </p-inputGroup>
+        </div>
+
+        <div class="input-controller">
+          <label for="">Email</label>
+          <p-inputGroup>
+            <p-inputGroupAddon>
+              <i class="pi pi-envelope"></i>
+            </p-inputGroupAddon>
+            <input pInputText placeholder="Email" />
+          </p-inputGroup>
+        </div>
+
+        <div class="input-controller">
+          <label for="">Usuario</label>
+          <p-inputGroup>
+            <p-inputGroupAddon>
+              <i class="pi pi-user"></i>
+            </p-inputGroupAddon>
+            <input pInputText placeholder="Usuario" />
+          </p-inputGroup>
+        </div>
+
+        <div class="input-controller">
+          <label for="">Contraseña</label>
+          <p-inputGroup>
+            <p-inputGroupAddon>
+              <i class="pi pi-lock"></i>
+            </p-inputGroupAddon>
+            <input pInputText placeholder="Contraseña" />
+          </p-inputGroup>
+        </div>
+
+      </form>
+
+      <div class="flex align-items-center justify-content-center gap-4 mt-3">
+        <p-button label="Guardar" icon="pi pi-save" severity="warning" />
+        <p-button label="Cancelar" icon="pi pi-times-circle" severity="danger" />
+      </div>
+
+    </p-card>
+
+  </div>
+
+</div>
