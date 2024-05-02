@@ -20,50 +20,6 @@
       "str_phone_user": "0963662069",
       "bool_status_user": true,
       "int_id_role": "1"
-    },
-    {
-      "id": "1abf",
-      "str_username_user": "Samy027",
-      "str_password_user": "amoaminovio",
-      "str_name_user": "Samantha",
-      "str_lastname_user": "Reyes",
-      "str_email_user": "sami@gmail.com",
-      "str_phone_user": "0993063595",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "cb27",
-      "str_username_user": "PepitoCamelo",
-      "str_password_user": "123456",
-      "str_name_user": "Pepito",
-      "str_lastname_user": "Juarez",
-      "str_email_user": "pepitocamelo@gmail.com",
-      "str_phone_user": "3847194385",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "e043",
-      "str_username_user": "AlbetoXD",
-      "str_password_user": "123456",
-      "str_name_user": "Alberto",
-      "str_lastname_user": "Morocho",
-      "str_email_user": "albertino@gmail.com",
-      "str_phone_user": "1234567890",
-      "bool_status_user": true,
-      "int_id_role": "2"
-    },
-    {
-      "id": "eb1b",
-      "str_username_user": "Isra047",
-      "str_password_user": "Lolxdxd12",
-      "str_name_user": "Pablo",
-      "str_lastname_user": "Bolanos",
-      "str_email_user": "pablo@gmail.com",
-      "str_phone_user": "0963662069",
-      "bool_status_user": true,
-      "int_id_role": "2"
     }
   ],
   "Forms": [
