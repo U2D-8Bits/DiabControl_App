@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../../auth/interfaces/user.interface';
 import { AuthUserService } from '../../../auth/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'home-settings-page',
@@ -10,10 +11,18 @@ import { AuthUserService } from '../../../auth/services/user.service';
 export class SettingsPageComponent implements OnInit{
 
 
-  constructor() {}
+  constructor(
+    private authService: AuthUserService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
 
+  }
+
+  onLogout():void {
+    this.authService.logout();
+    this.router.navigate(['/auth']);
   }
 
   ngOnDestroy(): void {
