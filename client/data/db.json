@@ -31,6 +31,17 @@
       "str_phone_user": "0986332090",
       "bool_status_user": true,
       "int_id_role": "2"
+    },
+    {
+      "id": "4515",
+      "str_username_user": "Emilio_David",
+      "str_password_user": "123456",
+      "str_name_user": "Emilio David",
+      "str_lastname_user": "Bolaños Párraga",
+      "str_email_user": "david.bolanios@outlook.com",
+      "str_phone_user": "0985522778",
+      "bool_status_user": true,
+      "int_id_role": "2"
     }
   ],
   "Forms": [

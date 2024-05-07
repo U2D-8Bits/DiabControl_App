@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePatientComponent } from './components/create-patient/create-patient.component';
 import { SharedModule } from '../shared/shared.module';
 import { ViewPatientComponent } from './components/view-patient/view-patient.component';
+import { InformPageComponent } from './pages/inform-page/inform-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ViewPatientComponent } from './components/view-patient/view-patient.com
     SettingsPageComponent,
     FormsPageComponent,
     PatientsPageComponent,
+    InformPageComponent,
 
     // SubPaginas Componentes
     EditFormPageComponent,
@@ -53,6 +55,7 @@ import { ViewPatientComponent } from './components/view-patient/view-patient.com
     SettingsPageComponent,
     FormsPageComponent,
     PatientsPageComponent,
+    InformPageComponent,
 
     // SubPaginas Componentes
     EditFormPageComponent,
